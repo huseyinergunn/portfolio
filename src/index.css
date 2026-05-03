@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+/* ── Light mode tokens ─────────────────────────────────── */
+:root {
+  --c-primary:       #1e1e2e;
+  --c-secondary:     #6b6b8a;
+  --c-muted:         #8888a8;
+  --c-muted2:        #b0b0cc;
+
+  --c-card:          rgba(255, 255, 255, 0.82);
+  --c-card-border:   rgba(255, 255, 255, 0.96);
+  --c-card-shadow:   rgba(155, 142, 196, 0.10);
+
+  --c-nav:           rgba(255, 255, 255, 0.72);
+  --c-nav-border:    rgba(155, 142, 196, 0.20);
+
+  --c-stat:          rgba(155, 142, 196, 0.08);
+  --c-tag:           rgba(155, 142, 196, 0.10);
+  --c-tag-text:      #6b6b8a;
+
+  --c-ghost:         rgba(255, 255, 255, 0.82);
+  --c-ghost-border:  rgba(155, 142, 196, 0.40);
+
+  --c-badge:         rgba(255, 255, 255, 0.76);
+  --c-footer-line:   rgba(155, 142, 196, 0.15);
+
+  --c-nav-link:      #6b6b8a;
+  --c-nav-active-bg: rgba(155, 142, 196, 0.15);
+  --c-social-github: #1e1e2e;
+}
+
+/* ── Dark mode tokens ──────────────────────────────────── */
+html.dark {
+  --c-primary:       #e2e8f0;
+  --c-secondary:     #94a3b8;
+  --c-muted:         #64748b;
+  --c-muted2:        #475569;
+
+  --c-card:          rgba(30, 41, 59, 0.92);
+  --c-card-border:   rgba(255, 255, 255, 0.06);
+  --c-card-shadow:   rgba(0, 0, 0, 0.30);
+
+  --c-nav:           rgba(15, 23, 42, 0.90);
+  --c-nav-border:    rgba(255, 255, 255, 0.08);
+
+  --c-stat:          rgba(255, 255, 255, 0.05);
+  --c-tag:           rgba(255, 255, 255, 0.07);
+  --c-tag-text:      #94a3b8;
+
+  --c-ghost:         rgba(30, 41, 59, 0.82);
+  --c-ghost-border:  rgba(155, 142, 196, 0.30);
+
+  --c-badge:         rgba(30, 41, 59, 0.82);
+  --c-footer-line:   rgba(255, 255, 255, 0.08);
+
+  --c-nav-link:      #94a3b8;
+  --c-nav-active-bg: rgba(155, 142, 196, 0.20);
+  --c-social-github: #e2e8f0;
+}
+
+/* ── Base ──────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(160deg, #fdf6f0 0%, #f3eefa 40%, #e8f4fd 100%);
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+html.dark body {
+  background: #0f172a;
+}
+
+/* ── Animations ────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.fade-up { animation: fadeUp 0.7s ease-out forwards; }
+.fade-in { animation: fadeIn 0.6s ease-out forwards; }
+
+.delay-1 { animation-delay: 0.15s; opacity: 0; }
+.delay-2 { animation-delay: 0.30s; opacity: 0; }
+.delay-3 { animation-delay: 0.45s; opacity: 0; }
+.delay-4 { animation-delay: 0.60s; opacity: 0; }
+.delay-5 { animation-delay: 0.75s; opacity: 0; }
+.delay-6 { animation-delay: 0.90s; opacity: 0; }
