@@ -54,6 +54,7 @@ export default function About() {
   return (
     <section
       id="about"
+      className="r-section"
       style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', padding: '100px 24px 80px' }}
     >
       <div style={{ maxWidth: '1100px', margin: '0 auto', width: '100%' }}>

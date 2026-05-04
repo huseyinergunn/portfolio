@@ -70,6 +70,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
+      className="r-section"
       style={{
         minHeight: '100vh',
         display: 'flex',
@@ -86,7 +87,7 @@ export default function Projects() {
             Projeler
           </span>
         </div>
-        <h2 style={{
+        <h2 className="r-projects-h2" style={{
           fontSize: 'clamp(1.8rem, 4vw, 2.6rem)',
           fontWeight: 700, color: 'var(--c-primary)',
           letterSpacing: '-0.02em', margin: '0 0 48px',
@@ -94,7 +95,7 @@ export default function Projects() {
           Öne Çıkan Çalışmalar
         </h2>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
+        <div className="r-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
           {projects.map((p) => (
             <div
               key={p.id}
@@ -117,7 +118,7 @@ export default function Projects() {
               }}
             >
               {/* Screenshot preview */}
-              <div style={{
+              <div className="r-proj-img" style={{
                 height: '180px',
                 position: 'relative',
                 overflow: 'hidden',

@@ -100,3 +100,76 @@ html.dark body {
 .delay-4 { animation-delay: 0.60s; opacity: 0; }
 .delay-5 { animation-delay: 0.75s; opacity: 0; }
 .delay-6 { animation-delay: 0.90s; opacity: 0; }
+
+/* ── Responsive ─────────────────────────────────────────── */
+
+/* Section padding override */
+@media (max-width: 767px) {
+  .r-section {
+    padding-top: 80px !important;
+    padding-bottom: 56px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Timeline: hide dot column and vertical line, collapse gap */
+  .r-tl-dot  { display: none !important; }
+  .r-tl-line { display: none !important; }
+  .r-tl-entry { gap: 0 !important; }
+
+  /* Experience card body padding */
+  .r-card-body { padding: 20px !important; }
+
+  /* Callout bar: stack vertically */
+  .r-callout {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 20px !important;
+  }
+  .r-callout-btn {
+    margin-left: 0 !important;
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Contact bio: full width */
+  .r-contact-bio {
+    max-width: 100% !important;
+    margin-bottom: 40px !important;
+    font-size: 0.95rem !important;
+  }
+
+  /* Experience header: stack period badge below title */
+  .r-exp-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  /* CV download button: full width below h2 */
+  .r-dl-btn-wrap {
+    width: 100% !important;
+  }
+  .r-dl-btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Projects h2 margin */
+  .r-projects-h2 { margin-bottom: 32px !important; }
+}
+
+@media (max-width: 479px) {
+  .r-section {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  /* Force 1-col on very small phones */
+  .r-grid { grid-template-columns: 1fr !important; }
+
+  /* Hero subtitle */
+  .r-hero-sub { font-size: 0.9rem !important; }
+
+  /* Project screenshot height */
+  .r-proj-img { height: 150px !important; }
+}

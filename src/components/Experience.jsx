@@ -27,6 +27,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
+      className="r-section"
       style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', padding: '100px 24px 80px' }}
     >
       <div style={{ maxWidth: '1100px', margin: '0 auto', width: '100%' }}>
@@ -39,7 +40,7 @@ export default function Experience() {
           </span>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: '24px', marginBottom: '56px', flexWrap: 'wrap' }}>
+        <div className="r-dl-btn-wrap" style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: '16px', marginBottom: '56px', flexWrap: 'wrap' }}>
           <h2 style={{
             fontSize: 'clamp(1.8rem, 4vw, 2.6rem)',
             fontWeight: 700, color: 'var(--c-primary)',
@@ -52,6 +53,7 @@ export default function Experience() {
           <a
             href="/huseyin_ergun_cv.pdf"
             download="Huseyin_Ergun_CV.pdf"
+            className="r-dl-btn"
             style={{
               display: 'inline-flex', alignItems: 'center', gap: '8px',
               padding: '12px 24px', borderRadius: '100px',
@@ -81,7 +83,7 @@ export default function Experience() {
         <div style={{ position: 'relative' }}>
 
           {/* Vertical line */}
-          <div style={{
+          <div className="r-tl-line" style={{
             position: 'absolute', left: '24px', top: '52px', bottom: '0',
             width: '2px',
             background: 'linear-gradient(180deg, rgba(96,165,250,0.5) 0%, rgba(155,142,196,0.2) 80%, transparent 100%)',
@@ -89,10 +91,10 @@ export default function Experience() {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
             {experiences.map((exp) => (
-              <div key={exp.id} style={{ display: 'flex', gap: '40px', alignItems: 'flex-start' }}>
+              <div key={exp.id} className="r-tl-entry" style={{ display: 'flex', gap: '40px', alignItems: 'flex-start' }}>
 
                 {/* Timeline dot */}
-                <div style={{ flexShrink: 0, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <div className="r-tl-dot" style={{ flexShrink: 0, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                   <div style={{
                     width: '50px', height: '50px', borderRadius: '16px',
                     background: exp.gradient,
@@ -128,10 +130,10 @@ export default function Experience() {
                   {/* Card top accent bar */}
                   <div style={{ height: '4px', background: exp.gradient }} />
 
-                  <div style={{ padding: '28px 32px' }}>
+                  <div className="r-card-body" style={{ padding: '28px 32px' }}>
 
                     {/* Header */}
-                    <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '16px', flexWrap: 'wrap', marginBottom: '20px' }}>
+                    <div className="r-exp-header" style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '16px', flexWrap: 'wrap', marginBottom: '20px' }}>
                       <div>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '6px' }}>
                           <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--c-primary)', margin: 0, letterSpacing: '-0.02em' }}>
@@ -216,7 +218,7 @@ export default function Experience() {
         </div>
 
         {/* "Open to opportunities" callout */}
-        <div style={{
+        <div className="r-callout" style={{
           marginTop: '48px',
           padding: '24px 32px',
           borderRadius: '20px',
@@ -237,6 +239,7 @@ export default function Experience() {
           </p>
           <a
             href="#contact"
+            className="r-callout-btn"
             style={{
               display: 'inline-flex', alignItems: 'center', gap: '6px',
               padding: '9px 20px', borderRadius: '100px', marginLeft: 'auto',

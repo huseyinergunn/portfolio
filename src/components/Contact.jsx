@@ -62,6 +62,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
+      className="r-section"
       style={{
         minHeight: '100vh',
         display: 'flex',
@@ -102,14 +103,14 @@ export default function Contact() {
         }}>
           Yeni Fırsatlara Açığım
         </h2>
-        <p style={{ fontSize: '1rem', color: 'var(--c-secondary)', margin: '0 0 64px', maxWidth: '520px', lineHeight: 1.75 }}>
+        <p className="r-contact-bio" style={{ fontSize: '1rem', color: 'var(--c-secondary)', margin: '0 0 64px', maxWidth: '520px', lineHeight: 1.75 }}>
           Yazılım geliştirme yolculuğuma Fullstack odaklı devam eden, verimlilik ve otomasyon araçlarını (n8n, AI) projelerine entegre etmeyi seven bir geliştiriciyim. Junior pozisyonlar için aktif olarak iş arayışındayım.
         </p>
 
         {/* Contact cards */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
           gap: '20px',
           marginBottom: '80px',
         }}>

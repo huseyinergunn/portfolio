@@ -9,6 +9,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
+      className="r-section"
       style={{
         minHeight: '100vh',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -92,7 +93,7 @@ export default function Hero() {
         </div>
 
         {/* Subtitle */}
-        <p className="fade-up delay-3" style={{
+        <p className="fade-up delay-3 r-hero-sub" style={{
           fontSize: '1.05rem',
           color: 'var(--c-secondary)',
           lineHeight: 1.75,
