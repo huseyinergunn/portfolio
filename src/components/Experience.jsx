@@ -72,7 +72,19 @@ export default function Experience() {
           {/* CV Download Button */}
           <a
             href="/huseyin_ergun_cv.pdf"
-            download="Huseyin_Ergun_CV.pdf"
+            onClick={(e) => {
+              e.preventDefault()
+              fetch('/huseyin_ergun_cv.pdf')
+                .then((res) => res.blob())
+                .then((blob) => {
+                  const url = URL.createObjectURL(blob)
+                  const a = document.createElement('a')
+                  a.href = url
+                  a.download = 'Huseyin_Ergun_CV.pdf'
+                  a.click()
+                  URL.revokeObjectURL(url)
+                })
+            }}
             style={{
               display: 'inline-flex', alignItems: 'center', gap: '8px',
               padding: '12px 24px', borderRadius: '100px',
