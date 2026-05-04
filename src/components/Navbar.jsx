@@ -126,7 +126,7 @@ export default function Navbar() {
         </a>
 
         {/* Desktop nav */}
-        <nav style={{ display: 'flex', alignItems: 'center', gap: '8px' }} className="hidden md:flex">
+        <nav className="hidden md:flex items-center" style={{ gap: '8px' }}>
           {NAV_LINKS.map((l) => {
             const id = l.href.replace('#', '')
             const isActive = active === id

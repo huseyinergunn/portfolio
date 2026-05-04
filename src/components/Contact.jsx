@@ -97,7 +97,7 @@ export default function Contact() {
         </div>
 
         <h2 style={{
-          fontSize: 'clamp(1.8rem, 4vw, 2.6rem)',
+          fontSize: 'clamp(1.5rem, 5vw, 2.6rem)',
           fontWeight: 700, color: 'var(--c-primary)',
           letterSpacing: '-0.02em', margin: '0 0 12px',
         }}>

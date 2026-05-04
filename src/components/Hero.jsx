@@ -30,7 +30,7 @@ export default function Hero() {
         filter: 'blur(40px)', pointerEvents: 'none',
       }} />
 
-      <div style={{ textAlign: 'center', padding: '0 24px', maxWidth: '760px', position: 'relative' }}>
+      <div style={{ textAlign: 'center', padding: '0 16px', maxWidth: '760px', position: 'relative', width: '100%' }}>
 
         {/* "Available" badge */}
         <div className="fade-up delay-1" style={{
@@ -51,7 +51,7 @@ export default function Hero() {
 
         {/* Name */}
         <h1 className="fade-up delay-2" style={{
-          fontSize: 'clamp(2.4rem, 6vw, 4rem)',
+          fontSize: 'clamp(1.7rem, 8vw, 4rem)',
           fontWeight: 700,
           color: 'var(--c-primary)',
           letterSpacing: '-0.03em',
@@ -100,7 +100,7 @@ export default function Hero() {
           marginBottom: '48px',
         }}>
           React, Node.js ve modern web teknolojileriyle kullanıcı odaklı,
-          ölçeklenebilir uygulamalar geliştiriyorum. Temiz kod, gerçek çözümler.
+          ölçeklenebilir uygulamalar geliştiriyorum.
         </p>
 
         {/* CTA Buttons */}
