@@ -175,3 +175,39 @@ html.dark body {
   /* Project screenshot height */
   .r-proj-img { height: 150px !important; }
 }
+
+/* ── Print / PDF ─────────────────────────────────────────── */
+@media print {
+  /* Hide navbar */
+  header { display: none !important; }
+
+  /* Reset backgrounds and overflow */
+  html, body {
+    background: white !important;
+    overflow: visible !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Remove min-height and compress section padding */
+  section {
+    min-height: unset !important;
+    padding: 28px 32px !important;
+    display: block !important;
+  }
+
+  /* Prevent cards and content blocks from splitting across pages */
+  .print-block {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Keep section heading with its content */
+  .print-keep {
+    break-before: avoid;
+    page-break-before: avoid;
+  }
+
+  /* Tighten spacing for print */
+  .print-tight { margin-bottom: 16px !important; }
+}

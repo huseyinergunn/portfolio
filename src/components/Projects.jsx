@@ -70,12 +70,12 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="r-section"
+      className="r-section print-block"
       style={{
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
-        padding: '100px 24px 80px',
+        padding: '80px 24px 60px',
       }}
     >
       <div style={{ maxWidth: '1100px', margin: '0 auto', width: '100%' }}>
@@ -90,15 +90,16 @@ export default function Projects() {
         <h2 className="r-projects-h2" style={{
           fontSize: 'clamp(1.5rem, 5vw, 2.6rem)',
           fontWeight: 700, color: 'var(--c-primary)',
-          letterSpacing: '-0.02em', margin: '0 0 48px',
+          letterSpacing: '-0.02em', margin: '0 0 28px',
         }}>
           Öne Çıkan Çalışmalar
         </h2>
 
-        <div className="r-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
+        <div className="r-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '16px' }}>
           {projects.map((p) => (
             <div
               key={p.id}
+              className="print-block"
               style={{
                 background: 'var(--c-card)',
                 backdropFilter: 'blur(16px)',
@@ -119,7 +120,7 @@ export default function Projects() {
             >
               {/* Screenshot preview */}
               <div className="r-proj-img" style={{
-                height: '180px',
+                height: '150px',
                 position: 'relative',
                 overflow: 'hidden',
                 background: p.gradient,
@@ -157,22 +158,22 @@ export default function Projects() {
               </div>
 
               {/* Content */}
-              <div style={{ padding: '28px' }}>
+              <div style={{ padding: '20px 22px' }}>
                 <h3 style={{
-                  fontSize: '1.3rem', fontWeight: 700, color: 'var(--c-primary)',
-                  margin: '0 0 4px', letterSpacing: '-0.02em',
+                  fontSize: '1.15rem', fontWeight: 700, color: 'var(--c-primary)',
+                  margin: '0 0 3px', letterSpacing: '-0.02em',
                 }}>
                   {p.name}
                 </h3>
-                <p style={{ fontSize: '0.82rem', color: '#9b8ec4', fontWeight: 500, margin: '0 0 14px' }}>
+                <p style={{ fontSize: '0.8rem', color: '#9b8ec4', fontWeight: 500, margin: '0 0 10px' }}>
                   {p.tagline}
                 </p>
-                <p style={{ fontSize: '0.875rem', color: 'var(--c-secondary)', lineHeight: 1.75, margin: '0 0 20px' }}>
+                <p style={{ fontSize: '0.84rem', color: 'var(--c-secondary)', lineHeight: 1.65, margin: '0 0 14px' }}>
                   {p.description}
                 </p>
 
                 {/* Feature pills */}
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '20px' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '14px' }}>
                   {p.features.map((f) => (
                     <span key={f} style={{
                       fontSize: '0.75rem', fontWeight: 500,
@@ -186,7 +187,7 @@ export default function Projects() {
                 </div>
 
                 {/* Tech tags */}
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '24px' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px', marginBottom: '16px' }}>
                   {p.tags.map((t) => (
                     <span key={t} style={{
                       fontSize: '0.73rem',

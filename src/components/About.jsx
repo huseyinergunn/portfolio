@@ -54,13 +54,13 @@ export default function About() {
   return (
     <section
       id="about"
-      className="r-section"
-      style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', padding: '100px 24px 80px' }}
+      className="r-section print-block"
+      style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', padding: '80px 24px 60px' }}
     >
       <div style={{ maxWidth: '1100px', margin: '0 auto', width: '100%' }}>
 
         {/* Section label */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '48px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '28px' }}>
           <div style={{ width: '32px', height: '2px', background: 'linear-gradient(90deg, #9b8ec4, transparent)' }} />
           <span style={{ fontSize: '0.8rem', fontWeight: 600, color: '#9b8ec4', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
             Hakkımda
@@ -70,7 +70,7 @@ export default function About() {
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '24px', alignItems: 'start',
+          gap: '16px', alignItems: 'start',
         }}>
 
           {/* Ben Kimim? + Staj */}

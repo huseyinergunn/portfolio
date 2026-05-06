@@ -62,12 +62,12 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="r-section"
+      className="r-section print-block"
       style={{
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
-        padding: '100px 24px 80px',
+        padding: '80px 24px 60px',
         position: 'relative',
         overflow: 'hidden',
       }}

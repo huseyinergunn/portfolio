@@ -14,11 +14,9 @@ const experiences = [
     accentBg: 'rgba(96,165,250,0.10)',
     accentBorder: 'rgba(96,165,250,0.25)',
     tasks: [
-      'ASP.NET MVC mimarisi kullanarak kurumsal yazılım modülleri geliştirdim; MVC katmanlarını tam bağımsız olarak yapılandırarak bakım kolaylığı sağladım.',
-      'Entity Framework ile Code-First yaklaşımıyla veri modelleri oluşturdum, migration yönetimi ve ilişkisel şema tasarımı gerçekleştirdim.',
-      'RESTful API endpoint\'leri tasarlayıp belgeledim; Postman koleksiyonlarıyla uçtan uca test süreçleri oluşturdum.',
-      'MS SQL Server üzerinde sorgu optimizasyonu ve stored procedure yazımı ile veri erişim katmanı performansını iyileştirdim.',
-      'Gerçek projelerde Agile iş akışına dahil olarak ekip içi code review ve daily stand-up süreçlerini deneyimledim.',
+      'ASP.NET MVC ve Entity Framework (Code-First) ile kurumsal yazılım modülleri geliştirdim; migration yönetimi ve katman ayrımı uygulayarak bakım kolaylığı sağladım.',
+      'RESTful API\'ler tasarlayıp Postman ile uçtan uca test ettim; MS SQL Server\'da stored procedure ve sorgu optimizasyonu ile veri erişim performansını artırdım.',
+      'Agile sürecine dahil olarak ekip içi code review ve stand-up deneyimi kazandım; JWT tabanlı kimlik doğrulama akışlarını inceleyip uyguladım.',
     ],
     tags: ['C#', 'ASP.NET MVC', 'Entity Framework', 'MS SQL Server', 'RESTful APIs', 'Postman'],
   },
@@ -40,8 +38,8 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="r-section"
-      style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', padding: '100px 24px 80px' }}
+      className="r-section print-block"
+      style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', padding: '80px 24px 60px' }}
     >
       <div style={{ maxWidth: '1100px', margin: '0 auto', width: '100%' }}>
 
@@ -59,7 +57,7 @@ export default function Experience() {
           flexDirection: isMobile ? 'column' : 'row',
           justifyContent: 'space-between',
           gap: '16px',
-          marginBottom: '56px',
+          marginBottom: '32px',
         }}>
           <h2 style={{
             fontSize: 'clamp(1.5rem, 5vw, 2.6rem)',
