@@ -23,8 +23,8 @@ const contactCards = [
   {
     id: 'linkedin',
     label: 'LinkedIn',
-    value: 'linkedin.com/in/huseyinergunn',
-    href: 'https://linkedin.com/in/huseyinergunn',
+    value: 'linkedin.com/in/hüseyin-ergün-4b6498158',
+    href: 'https://linkedin.com/in/hüseyin-ergün-4b6498158/',
     Icon: LinkedinIcon,
     gradient: 'linear-gradient(135deg, #38bdf8 0%, #0ea5e9 50%, #0284c7 100%)',
     accentColor: '#38bdf8',
