@@ -156,13 +156,13 @@ export default function About() {
           </div>
 
           {/* Skills — categorized */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
             <h3 style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--c-primary)', margin: '0 0 4px', letterSpacing: '-0.01em' }}>
               Teknik Yetkinlikler
             </h3>
             {skillGroups.map((group) => (
-              <Card key={group.label} style={{ padding: '18px 22px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
+              <Card key={group.label} style={{ padding: '11px 16px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
                   <span style={{
                     display: 'inline-block', width: '8px', height: '8px',
                     borderRadius: '50%', background: group.color, flexShrink: 0,

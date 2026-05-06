@@ -158,6 +158,8 @@ export default function Experience() {
                   overflow: 'hidden',
                   transition: 'transform 0.25s, box-shadow 0.25s, background 0.4s, border-color 0.4s',
                   minWidth: 0,
+                  breakInside: 'avoid',
+                  pageBreakInside: 'avoid',
                 }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = 'translateY(-4px)'

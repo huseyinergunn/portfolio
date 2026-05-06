@@ -13,6 +13,7 @@ export default function App() {
         <Hero />
         <About />
         <Experience />
+        <div className="hidden print:block print:mt-10" />
         <Projects />
         <Contact />
       </main>
