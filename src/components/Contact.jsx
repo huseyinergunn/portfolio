@@ -23,7 +23,7 @@ const contactCards = [
   {
     id: 'linkedin',
     label: 'LinkedIn',
-    value: 'linkedin.com/in/hüseyin-ergün-4b6498158',
+    value: 'LinkedIn Profilim',
     href: 'https://linkedin.com/in/hüseyin-ergün-4b6498158/',
     Icon: LinkedinIcon,
     gradient: 'linear-gradient(135deg, #38bdf8 0%, #0ea5e9 50%, #0284c7 100%)',
@@ -35,7 +35,7 @@ const contactCards = [
   {
     id: 'github',
     label: 'GitHub',
-    value: 'github.com/huseyinergunn',
+    value: 'GitHub Profilim',
     href: 'https://github.com/huseyinergunn',
     Icon: GithubIcon,
     gradient: 'linear-gradient(135deg, #c4b5f4 0%, #9b8ec4 50%, #7c6fb5 100%)',
@@ -47,7 +47,7 @@ const contactCards = [
   {
     id: 'email',
     label: 'E-posta',
-    value: 'huseyinergun234@gmail.com',
+    value: 'E-Posta Gönder',
     href: 'mailto:huseyinergun234@gmail.com',
     Icon: MailIcon,
     gradient: 'linear-gradient(135deg, #6ee7b7 0%, #34d399 50%, #10b981 100%)',
@@ -181,8 +181,9 @@ export default function Contact() {
                   padding: '10px 14px', borderRadius: '12px',
                   background: accentBg,
                   border: `1px solid ${accentBorder}`,
+                  textAlign: 'center',
                 }}>
-                  <span style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--c-primary)', wordBreak: 'break-all' }}>
+                  <span style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--c-primary)', whiteSpace: 'nowrap' }}>
                     {value}
                   </span>
                 </div>
