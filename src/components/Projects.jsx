@@ -49,20 +49,21 @@ const projects = [
     demo: 'https://reserveai-cckb.onrender.com',
   },
   {
-    id: 'watchlist',
-    name: 'Watch List',
-    tagline: 'Kişisel Film Keşif ve Takip Uygulaması',
+    id: 'fintrack',
+    name: 'Fintrack',
+    tagline: 'AI Destekli KOBİ Muhasebe Platformu',
     description:
-      'Tailwind CSS v4, glassmorphism ve Framer Motion animasyonlarıyla Netflix ilhamı premium dark-mode arayüzüne sahip film takip uygulaması. ' +
-      'TMDB API entegrasyonu ve debounced arama ile hızlı film keşfi, LocalStorage ile kalıcı liste yönetimi.',
-    tags: ['React.js', 'Vite', 'Tailwind CSS v4', 'Framer Motion', 'TMDB API', 'LocalStorage API'],
+      'KOBİ\'lerin finansal süreçlerini dijitalleştiren full-stack muhasebe platformu. ' +
+      'Fatura oluşturma, gider takibi ve nakit akışı analizini tek arayüzde birleştiriyor. ' +
+      'Groq (LLaMA 3.3) destekli OCR motoru, fiş ve fatura görüntülerinden tutar, tarih ve kategori bilgisini otomatik çıkarıyor.',
+    tags: ['Next.js 14', 'NestJS', 'TypeScript', 'PostgreSQL', 'Prisma', 'React Query', 'Groq AI', 'Cloudinary'],
     gradient: 'linear-gradient(135deg, #6ee7b7 0%, #34d399 50%, #10b981 100%)',
     accentLight: 'rgba(52,211,153,0.12)',
     accentBorder: 'rgba(52,211,153,0.3)',
-    image: '/projects/watchlist.png',
-    features: ['TMDB API', 'Framer Motion', 'LocalStorage'],
-    github: 'https://github.com/huseyinergunn/watch-list',
-    demo: 'https://watch-list-seven-alpha.vercel.app',
+    image: '/projects/fintrack.png',
+    features: ['Groq / LLaMA 3.3', 'HTTP-Only Cookie Auth', 'TypeScript'],
+    github: 'https://github.com/huseyinergunn/fintrack-app',
+    demo: null,
   },
 ]
 
