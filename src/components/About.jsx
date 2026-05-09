@@ -4,14 +4,14 @@ const skillGroups = [
     color: '#a78bfa',
     bg: 'rgba(167,139,250,0.12)',
     border: 'rgba(167,139,250,0.25)',
-    items: ['C#', 'JavaScript (ES6+)', 'C'],
+    items: ['C#', 'JavaScript (ES6+)', 'TypeScript', 'C'],
   },
   {
     label: 'Frontend',
     color: '#60a5fa',
     bg: 'rgba(96,165,250,0.12)',
     border: 'rgba(96,165,250,0.25)',
-    items: ['React.js', 'Next.js', 'Redux Toolkit', 'TypeScript', 'Tailwind CSS', 'Bootstrap', 'HTML5', 'CSS3'],
+    items: ['React.js', 'Next.js', 'Redux Toolkit', 'Tailwind CSS', 'Bootstrap', 'HTML5', 'CSS3'],
   },
   {
     label: 'Backend',
