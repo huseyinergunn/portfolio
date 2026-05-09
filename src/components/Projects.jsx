@@ -63,7 +63,7 @@ const projects = [
     image: '/projects/fintrack.png',
     features: ['Groq / LLaMA 3.3', 'HTTP-Only Cookie Auth', 'TypeScript'],
     github: 'https://github.com/huseyinergunn/fintrack-app',
-    demo: null,
+    demo: 'https://fintrack-app-six-sand.vercel.app',
   },
 ]
 
