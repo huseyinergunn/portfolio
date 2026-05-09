@@ -4,35 +4,35 @@ const skillGroups = [
     color: '#a78bfa',
     bg: 'rgba(167,139,250,0.12)',
     border: 'rgba(167,139,250,0.25)',
-    items: ['C#', 'JavaScript (ES6+)', 'C'],
+    items: ['C#', 'JavaScript (ES6+)', 'TypeScript', 'C'],
   },
   {
     label: 'Frontend',
     color: '#60a5fa',
     bg: 'rgba(96,165,250,0.12)',
     border: 'rgba(96,165,250,0.25)',
-    items: ['HTML5', 'CSS3', 'React.js', 'Next.js', 'Redux Toolkit', 'Tailwind CSS', 'Bootstrap'],
+    items: ['React.js', 'Next.js', 'Redux Toolkit', 'Tailwind CSS', 'Bootstrap', 'HTML5', 'CSS3'],
   },
   {
     label: 'Backend',
     color: '#34d399',
     bg: 'rgba(52,211,153,0.12)',
     border: 'rgba(52,211,153,0.25)',
-    items: ['Node.js', 'Express.js', 'ASP.NET MVC', 'Entity Framework', 'RESTful APIs'],
+    items: ['Node.js', 'Express.js', 'NestJS', 'Prisma ORM', 'ASP.NET MVC', 'Entity Framework', 'RESTful APIs'],
   },
   {
     label: 'Veritabanı',
     color: '#fb923c',
     bg: 'rgba(251,146,60,0.12)',
     border: 'rgba(251,146,60,0.25)',
-    items: ['MongoDB', 'MS SQL Server'],
+    items: ['MongoDB', 'PostgreSQL', 'MS SQL Server'],
   },
   {
-    label: 'Araçlar',
+    label: 'Araçlar & Teknolojiler',
     color: '#9b8ec4',
     bg: 'rgba(155,142,196,0.12)',
     border: 'rgba(155,142,196,0.25)',
-    items: ['Git & GitHub', 'Postman', 'JWT', 'n8n', 'AI Integration (LLMs)'],
+    items: ['Git & GitHub', 'Postman', 'JWT', 'n8n (Automation)', 'AI Integration (LLMs)', 'Cloudinary', 'Vercel / Render'],
   },
 ]
 
@@ -91,15 +91,16 @@ export default function About() {
                 Ben Kimim?
               </h2>
               <p style={{ color: 'var(--c-secondary)', lineHeight: 1.8, fontSize: '0.92rem', margin: '0 0 14px' }}>
-                Dokuz Eylül Üniversitesi Bilgisayar Bilimleri mezunuyum. React, Node.js ve
-                modern web ekosistemiyle{' '}
-                <strong style={{ color: '#9b8ec4' }}>çözüm odaklı</strong>,{' '}
+                Dokuz Eylül Üniversitesi Bilgisayar Bilimleri mezunuyum. MERN Stack ve .NET
+                ekosistemi (ASP.NET MVC, Entity Framework) ile{' '}
+                <strong style={{ color: '#9b8ec4' }}>ölçeklenebilir</strong>,{' '}
                 <strong style={{ color: '#9b8ec4' }}>kullanıcı odaklı</strong>{' '}
                 full-stack uygulamalar geliştiriyorum.
               </p>
               <p style={{ color: 'var(--c-secondary)', lineHeight: 1.8, fontSize: '0.92rem', margin: 0 }}>
-                Sürekli öğrenen bir geliştirici olarak modern teknolojilerle gerçek iş
-                değeri yaratan projeler üretmeyi hedefliyorum.
+                AI destekli çözümleri yazılım iş akışlarına entegre etmeye ilgi duyuyor;
+                veritabanı tasarımından modern UI implementasyonuna kadar uçtan uca proje
+                yönetimi konusunda deneyim kazanıyorum.
               </p>
 
               {/* Qualitative badges */}
