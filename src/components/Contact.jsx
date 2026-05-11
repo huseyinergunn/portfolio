@@ -93,7 +93,7 @@ export default function Contact() {
         {/* Section label */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
           <div style={{ width: '32px', height: '2px', background: 'linear-gradient(90deg, #c4b5f4, transparent)' }} />
-          <span style={{ fontSize: '0.8rem', fontWeight: 600, color: '#9b8ec4', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+          <span style={{ fontSize: '0.84rem', fontWeight: 600, color: '#9b8ec4', letterSpacing: '0.16em', textTransform: 'uppercase' }}>
             {c.section_label}
           </span>
         </div>

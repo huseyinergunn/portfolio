@@ -66,7 +66,7 @@ export default function Projects() {
         {/* Section label */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
           <div style={{ width: '32px', height: '2px', background: 'linear-gradient(90deg, #60a5fa, transparent)' }} />
-          <span style={{ fontSize: '0.8rem', fontWeight: 600, color: '#60a5fa', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+          <span style={{ fontSize: '0.84rem', fontWeight: 600, color: '#60a5fa', letterSpacing: '0.16em', textTransform: 'uppercase' }}>
             {p.section_label}
           </span>
         </div>
@@ -87,8 +87,8 @@ export default function Projects() {
                 background: 'var(--c-card)',
                 backdropFilter: 'blur(16px)',
                 borderRadius: '28px',
-                border: '1px solid var(--c-card-border)',
-                boxShadow: '0 4px 40px var(--c-card-shadow)',
+                border: '1px solid var(--c-proj-border)',
+                boxShadow: '0 4px 24px var(--c-card-shadow), 0 1px 4px rgba(0,0,0,0.04)',
                 overflow: 'hidden',
                 transition: 'transform 0.25s, box-shadow 0.25s, background 0.4s, border-color 0.4s',
               }}

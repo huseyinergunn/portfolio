@@ -15,8 +15,9 @@
   --c-card-border:   rgba(255, 255, 255, 0.96);
   --c-card-shadow:   rgba(155, 142, 196, 0.10);
 
-  --c-nav:           rgba(255, 255, 255, 0.72);
-  --c-nav-border:    rgba(155, 142, 196, 0.20);
+  --c-nav:           rgba(255, 255, 255, 0.88);
+  --c-nav-border:    rgba(155, 142, 196, 0.30);
+  --c-proj-border:   rgba(203, 213, 225, 0.80);
 
   --c-stat:          rgba(155, 142, 196, 0.08);
   --c-tag:           rgba(155, 142, 196, 0.10);
@@ -45,7 +46,8 @@ html.dark {
   --c-card-shadow:   rgba(0, 0, 0, 0.30);
 
   --c-nav:           rgba(15, 23, 42, 0.90);
-  --c-nav-border:    rgba(255, 255, 255, 0.08);
+  --c-nav-border:    rgba(255, 255, 255, 0.10);
+  --c-proj-border:   rgba(255, 255, 255, 0.08);
 
   --c-stat:          rgba(255, 255, 255, 0.05);
   --c-tag:           rgba(255, 255, 255, 0.07);

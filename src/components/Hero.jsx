@@ -132,20 +132,19 @@ export default function Hero() {
             href="#contact"
             style={{
               padding: '13px 32px', borderRadius: '100px',
-              background: 'var(--c-ghost)',
-              backdropFilter: 'blur(10px)',
-              border: '1.5px solid var(--c-ghost-border)',
-              color: 'var(--c-primary)',
+              background: 'transparent',
+              border: '1.5px solid #9b8ec4',
+              color: '#9b8ec4',
               fontWeight: 600, fontSize: '0.9rem',
               textDecoration: 'none',
               transition: 'all 0.2s',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = '#9b8ec4'
+              e.currentTarget.style.background = 'rgba(155,142,196,0.10)'
               e.currentTarget.style.transform = 'translateY(-2px)'
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = 'var(--c-ghost-border)'
+              e.currentTarget.style.background = 'transparent'
               e.currentTarget.style.transform = 'translateY(0)'
             }}
           >

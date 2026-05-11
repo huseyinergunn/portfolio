@@ -45,7 +45,7 @@ export default function About() {
         {/* Section label */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '28px' }}>
           <div style={{ width: '32px', height: '2px', background: 'linear-gradient(90deg, #9b8ec4, transparent)' }} />
-          <span style={{ fontSize: '0.8rem', fontWeight: 600, color: '#9b8ec4', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+          <span style={{ fontSize: '0.84rem', fontWeight: 600, color: '#9b8ec4', letterSpacing: '0.16em', textTransform: 'uppercase' }}>
             {a.section_label}
           </span>
         </div>

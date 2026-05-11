@@ -37,7 +37,7 @@ export default function Experience() {
         {/* Section label */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
           <div style={{ width: '32px', height: '2px', background: 'linear-gradient(90deg, #60a5fa, transparent)' }} />
-          <span style={{ fontSize: '0.8rem', fontWeight: 600, color: '#60a5fa', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+          <span style={{ fontSize: '0.84rem', fontWeight: 600, color: '#60a5fa', letterSpacing: '0.16em', textTransform: 'uppercase' }}>
             {e.section_label}
           </span>
         </div>
