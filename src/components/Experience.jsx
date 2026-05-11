@@ -14,9 +14,9 @@ const experiences = [
     accentBg: 'rgba(96,165,250,0.10)',
     accentBorder: 'rgba(96,165,250,0.25)',
     tasks: [
-      'ASP.NET MVC ve Entity Framework (Code-First) ile kurumsal yazılım modülleri geliştirdim; migration yönetimi ve katman ayrımı uygulayarak bakım kolaylığı sağladım.',
-      'RESTful API\'ler tasarlayıp Postman ile uçtan uca test ettim; MS SQL Server\'da stored procedure ve sorgu optimizasyonu ile veri erişim performansını artırdım.',
-      'Agile sürecine dahil olarak ekip içi code review ve stand-up deneyimi kazandım; JWT tabanlı kimlik doğrulama akışlarını inceleyip uyguladım.',
+      'ASP.NET MVC ve Entity Framework kullanarak ürünler, siparişler ve kullanıcılar gibi temel iş birimleri için CRUD modülleri geliştirdim; manuel veri girişi süresini azalttım.',
+      'MS SQL Server\'da ilişkisel şemalar tasarladım, stored procedure yazdım ve yavaş sorguları tespit ederek veri erişim performansını iyileştirdim.',
+      'Kıdemli geliştiricilerle code review süreçlerine ve stand-up toplantılarına katılarak kurumsal MVC mimarisine ve Git tabanlı versiyon kontrolüne pratik deneyim kazandım.',
     ],
     tags: ['C#', 'ASP.NET MVC', 'Entity Framework', 'MS SQL Server', 'RESTful APIs', 'Postman'],
   },
@@ -290,9 +290,7 @@ export default function Experience() {
             flexShrink: 0,
           }} />
           <p style={{ margin: 0, fontSize: '0.88rem', color: 'var(--c-secondary)', lineHeight: 1.7 }}>
-            Staj deneyimimin üzerine inşa ettiğim full-stack projelerle{' '}
-            <strong style={{ color: 'var(--c-primary)' }}>junior pozisyonlara</strong> aktif olarak başvurmaktayım.
-            Gerçek dünya sorunlarını çözen, ölçeklenebilir uygulamalar geliştirmeye hazırım.
+            Full-stack projeler geliştirirken bir ekiple birlikte çalışmak ve katkı sağlamak istiyorum.
           </p>
           <a
             href="#contact"

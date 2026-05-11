@@ -154,11 +154,9 @@ export default function About() {
                       Tem – Ağu 2024
                     </span>
                   </div>
-                  <ul style={{ fontSize: '0.82rem', color: 'var(--c-secondary)', lineHeight: 1.7, margin: '10px 0 0', padding: '0 0 0 16px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                    <li>ASP.NET MVC ve Entity Framework kullanarak ürünler, siparişler ve kullanıcılar gibi temel iş birimleri için CRUD modülleri geliştirdim; manuel veri girişi süresini azalttım.</li>
-                    <li>MS SQL Server'da ilişkisel şemalar tasarladım, stored procedure yazdım ve yavaş sorguları tespit ederek veri erişim performansını iyileştirdim.</li>
-                    <li>Kıdemli geliştiricilerle code review süreçlerine katılarak kurumsal MVC mimarisine ve Git tabanlı versiyon kontrolüne pratik deneyim kazandım.</li>
-                  </ul>
+                  <p style={{ fontSize: '0.82rem', color: 'var(--c-secondary)', lineHeight: 1.7, margin: '10px 0 0' }}>
+                    ASP.NET MVC ve Entity Framework kullanarak ürünler, siparişler ve kullanıcılar gibi temel iş birimleri için CRUD modülleri geliştirdim. MS SQL Server'da ilişkisel şemalar tasarladım, stored procedure yazdım ve kıdemli geliştiricilerle code review süreçlerine katılarak Git tabanlı versiyon kontrolüne pratik deneyim kazandım.
+                  </p>
                 </div>
               </div>
             </Card>

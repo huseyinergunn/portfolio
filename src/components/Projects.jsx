@@ -15,31 +15,29 @@ const GitHubIcon = () => (
 
 const projects = [
   {
-    id: 'nexpos',
-    name: 'NexPos',
-    tagline: 'Dijital Perakende Yönetim Sistemi',
+    id: 'fintrack',
+    name: 'Fintrack',
+    tagline: 'AI Destekli Finansal Yönetim & Faturalama Platformu',
     description:
-      'MERN Stack, Redux Toolkit ve Tailwind CSS ile geliştirilmiş kapsamlı bir dijital ' +
-      'perakende ve satış noktası sistemi. Ürün yönetimi, sepet akışı, kullanıcı rolleri ' +
-      've satış raporlama modülleri içermektedir.',
-    tags: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Redux Toolkit', 'Tailwind CSS'],
-    gradient: 'linear-gradient(135deg, #c4b5f4 0%, #a78bfa 50%, #8b5cf6 100%)',
-    accentLight: 'rgba(167,139,250,0.12)',
-    accentBorder: 'rgba(167,139,250,0.3)',
-    image: '/projects/nexpos.png',
-    features: ['MERN Stack', 'Redux Toolkit', 'Rol Tabanlı Yetkilendirme'],
-    github: 'https://github.com/huseyinergunn/pos-app',
-    demo: 'https://nexpos-app.vercel.app',
+      'İşletmelerin fatura oluşturmasını, gider takibini ve nakit akışını gerçek zamanlı analitik ' +
+      'dashboard ile yönetmesini sağlayan full-stack SaaS muhasebe platformu.',
+    tags: ['Next.js 14', 'NestJS', 'PostgreSQL', 'Prisma', 'React Query', 'Tailwind CSS', 'Groq AI', 'Cloudinary'],
+    gradient: 'linear-gradient(135deg, #6ee7b7 0%, #34d399 50%, #10b981 100%)',
+    accentLight: 'rgba(52,211,153,0.12)',
+    accentBorder: 'rgba(52,211,153,0.3)',
+    image: '/projects/fintrack.png',
+    features: ['Groq / LLaMA 3.3', 'HTTP-Only Cookie Auth', 'TypeScript'],
+    github: 'https://github.com/huseyinergunn/fintrack-app',
+    demo: 'https://fintrack-app-six-sand.vercel.app',
   },
   {
     id: 'reserveai',
     name: 'ReserveAI',
     tagline: 'AI Destekli Randevu Otomasyonu',
     description:
-      'MERN Stack ve TypeScript ile geliştirilmiş, Groq API üzerinden Llama 3.3 modeli ' +
-      'kullanan akıllı randevu sistemi. HTTP-Only Cookie tabanlı güvenli kimlik doğrulama ' +
-      've yapay zeka destekli uygunluk analizi içermektedir.',
-    tags: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'TypeScript', 'Groq (Llama 3.3)'],
+      'Kullanıcıların doğal dille randevu oluşturabildiği, Groq (Llama 3.3) ile intent sınıflandırması ' +
+      'yapan ve n8n ile manuel müdahaleyi ~%80 azaltan akıllı randevu sistemi.',
+    tags: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'TypeScript', 'Groq (Llama 3.3)', 'n8n', 'Railway'],
     gradient: 'linear-gradient(135deg, #93c5fd 0%, #60a5fa 50%, #3b82f6 100%)',
     accentLight: 'rgba(96,165,250,0.12)',
     accentBorder: 'rgba(96,165,250,0.3)',
@@ -49,21 +47,20 @@ const projects = [
     demo: 'https://reserveai-cckb.onrender.com',
   },
   {
-    id: 'fintrack',
-    name: 'Fintrack',
-    tagline: 'AI Destekli KOBİ Muhasebe Platformu',
+    id: 'nexpos',
+    name: 'NexPos',
+    tagline: 'Fullstack Satış Noktası & Stok Yönetim Sistemi',
     description:
-      'KOBİ\'lerin finansal süreçlerini dijitalleştiren full-stack muhasebe platformu. ' +
-      'Fatura oluşturma, gider takibi ve nakit akışı analizini tek arayüzde birleştiriyor. ' +
-      'Groq (LLaMA 3.3) destekli OCR motoru, fiş ve fatura görüntülerinden tutar, tarih ve kategori bilgisini otomatik çıkarıyor.',
-    tags: ['Next.js 14', 'NestJS', 'TypeScript', 'PostgreSQL', 'Prisma', 'React Query', 'Groq AI', 'Cloudinary'],
-    gradient: 'linear-gradient(135deg, #6ee7b7 0%, #34d399 50%, #10b981 100%)',
-    accentLight: 'rgba(52,211,153,0.12)',
-    accentBorder: 'rgba(52,211,153,0.3)',
-    image: '/projects/fintrack.png',
-    features: ['Groq / LLaMA 3.3', 'HTTP-Only Cookie Auth', 'TypeScript'],
-    github: 'https://github.com/huseyinergunn/fintrack-app',
-    demo: 'https://fintrack-app-six-sand.vercel.app',
+      'Perakende operasyonlarını dijitalleştiren kapsamlı bir POS sistemi. Gerçek zamanlı stok takibi, ' +
+      'dinamik fatura oluşturma ve kategori bazlı ürün yönetimi içermektedir.',
+    tags: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Redux Toolkit', 'Tailwind CSS'],
+    gradient: 'linear-gradient(135deg, #c4b5f4 0%, #a78bfa 50%, #8b5cf6 100%)',
+    accentLight: 'rgba(167,139,250,0.12)',
+    accentBorder: 'rgba(167,139,250,0.3)',
+    image: '/projects/nexpos.png',
+    features: ['MERN Stack', 'Redux Toolkit'],
+    github: 'https://github.com/huseyinergunn/pos-app',
+    demo: 'https://nexpos-app.vercel.app',
   },
 ]
 
