@@ -203,7 +203,7 @@ export default function Contact() {
           gap: '12px',
         }}>
           <span style={{ fontSize: '0.82rem', color: 'var(--c-muted2)' }}>
-            © 2025 Hüseyin Ergün · Tüm hakları saklıdır.
+            © 2026 Hüseyin Ergün · Tüm hakları saklıdır.
           </span>
           <span style={{ fontSize: '0.82rem', color: 'var(--c-muted2)' }}>
             React & Tailwind CSS ile yapılmıştır

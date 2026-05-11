@@ -99,8 +99,7 @@ export default function Hero() {
           lineHeight: 1.75,
           marginBottom: '48px',
         }}>
-          React, Node.js ve modern web teknolojileriyle kullanıcı odaklı,
-          ölçeklenebilir uygulamalar geliştiriyorum.
+          MERN Stack, TypeScript ve NestJS ile SaaS uygulamaları geliştiriyor, Groq ve n8n gibi araçlarla AI ve otomasyon entegre ediyorum.
         </p>
 
         {/* CTA Buttons */}
