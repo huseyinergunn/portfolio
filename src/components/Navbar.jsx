@@ -105,24 +105,18 @@ export default function Navbar() {
 
         {/* Logo */}
         <a href="#hero" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
-          <svg width="36" height="36" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="navCoolGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style={{ stopColor: '#6366f1' }} />
-                <stop offset="100%" style={{ stopColor: '#a855f7' }} />
-              </linearGradient>
-              <filter id="navSoftGlow" x="-20%" y="-20%" width="140%" height="140%">
-                <feGaussianBlur stdDeviation="2.5" result="blur" />
-                <feComposite in="SourceGraphic" in2="blur" operator="over" />
-              </filter>
-            </defs>
-            <rect x="15" y="15" width="90" height="90" rx="16" fill="#0f172a" stroke="url(#navCoolGrad)" strokeWidth="1.5" />
-            <g filter="url(#navSoftGlow)">
-              <path d="M35 40 V80 M35 60 H60" stroke="white" strokeWidth="7" strokeLinecap="round" />
-              <path d="M60 40 V80 M60 40 H85 M60 60 H78 M60 80 H85" stroke="url(#navCoolGrad)" strokeWidth="7" strokeLinecap="round" fill="none" />
-              <circle cx="85" cy="80" r="3.5" fill="white" />
-            </g>
-          </svg>
+          <span style={{
+            fontFamily: 'monospace',
+            fontSize: '1.25rem',
+            fontWeight: 700,
+            background: 'linear-gradient(135deg, #6366f1, #a855f7)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            letterSpacing: '-0.02em',
+          }}>
+            &lt;/&gt;
+          </span>
         </a>
 
         {/* Desktop nav */}
