@@ -104,7 +104,7 @@ export default function Contact() {
           Yeni Fırsatlara Açığım
         </h2>
         <p className="r-contact-bio" style={{ fontSize: '1rem', color: 'var(--c-secondary)', margin: '0 0 64px', maxWidth: '520px', lineHeight: 1.75 }}>
-          Yazılım geliştirme yolculuğuma Fullstack odaklı devam eden, verimlilik ve otomasyon araçlarını (n8n, AI) projelerine entegre etmeyi seven bir geliştiriciyim. Junior pozisyonlar için aktif olarak iş arayışındayım.
+          Full-stack projeler geliştirirken bir ekiple birlikte çalışmak ve katkı sağlamak istiyorum. Aşağıdan bana ulaşabilirsin.
         </p>
 
         {/* Contact cards */}
