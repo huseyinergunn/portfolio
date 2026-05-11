@@ -67,16 +67,21 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  /* sync initial dark state from html class (e.g. OS preference later) */
+  /* read saved theme or fall back to OS preference */
   useEffect(() => {
-    setIsDark(document.documentElement.classList.contains('dark'))
+    const saved = localStorage.getItem('theme')
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const shouldBeDark = saved ? saved === 'dark' : prefersDark
+    setIsDark(shouldBeDark)
+    document.documentElement.classList.toggle('dark', shouldBeDark)
   }, [])
 
-  /* toggle dark mode */
+  /* toggle dark mode and persist */
   const toggleDark = () => {
     const next = !isDark
     setIsDark(next)
     document.documentElement.classList.toggle('dark', next)
+    localStorage.setItem('theme', next ? 'dark' : 'light')
   }
 
   const navBg = scrolled
