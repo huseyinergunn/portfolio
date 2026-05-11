@@ -1,12 +1,8 @@
 import { useState, useEffect } from 'react'
+import { useLanguage } from '../context/LanguageContext'
 
-const NAV_LINKS = [
-  { label: 'Ana Sayfa', href: '#hero' },
-  { label: 'Hakkımda', href: '#about' },
-  { label: 'Deneyim', href: '#experience' },
-  { label: 'Projeler', href: '#projects' },
-  { label: 'İletişim', href: '#contact' },
-]
+const NAV_HREFS = ['#hero', '#about', '#experience', '#projects', '#contact']
+const NAV_KEYS  = ['home', 'about', 'experience', 'projects', 'contact']
 
 const MoonIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
@@ -52,6 +48,8 @@ export default function Navbar() {
   const [mobileOpen,  setMobileOpen]  = useState(false)
   const [active,      setActive]      = useState('hero')
   const [isDark,      setIsDark]      = useState(false)
+  const { lang, toggleLang, t } = useLanguage()
+  const NAV_LINKS = NAV_KEYS.map((key, i) => ({ label: t.nav[key], href: NAV_HREFS[i] }))
 
   /* scroll → scrolled state + active section */
   useEffect(() => {
@@ -144,6 +142,37 @@ export default function Navbar() {
             )
           })}
 
+          {/* Language toggle */}
+          <div style={{
+            display: 'flex', alignItems: 'center',
+            background: 'var(--c-nav-active-bg)',
+            borderRadius: '100px',
+            padding: '3px',
+            marginLeft: '8px',
+            gap: '2px',
+          }}>
+            {['TR', 'EN'].map((l) => (
+              <button
+                key={l}
+                onClick={() => toggleLang(l.toLowerCase())}
+                style={{
+                  padding: '4px 10px',
+                  borderRadius: '100px',
+                  border: 'none',
+                  cursor: 'pointer',
+                  fontSize: '0.75rem',
+                  fontWeight: 600,
+                  letterSpacing: '0.04em',
+                  transition: 'background 0.2s, color 0.2s',
+                  background: lang === l.toLowerCase() ? '#9b8ec4' : 'transparent',
+                  color: lang === l.toLowerCase() ? '#fff' : 'var(--c-nav-link)',
+                }}
+              >
+                {l}
+              </button>
+            ))}
+          </div>
+
           {/* Dark / Light toggle */}
           <button
             onClick={toggleDark}
@@ -167,6 +196,35 @@ export default function Navbar() {
 
         {/* Mobile controls */}
         <div className="flex md:hidden items-center gap-2">
+          {/* Language toggle — mobile */}
+          <div style={{
+            display: 'flex', alignItems: 'center',
+            background: 'var(--c-nav-active-bg)',
+            borderRadius: '100px',
+            padding: '3px',
+            gap: '2px',
+          }}>
+            {['TR', 'EN'].map((l) => (
+              <button
+                key={l}
+                onClick={() => toggleLang(l.toLowerCase())}
+                style={{
+                  padding: '3px 8px',
+                  borderRadius: '100px',
+                  border: 'none',
+                  cursor: 'pointer',
+                  fontSize: '0.7rem',
+                  fontWeight: 600,
+                  transition: 'background 0.2s, color 0.2s',
+                  background: lang === l.toLowerCase() ? '#9b8ec4' : 'transparent',
+                  color: lang === l.toLowerCase() ? '#fff' : 'var(--c-nav-link)',
+                }}
+              >
+                {l}
+              </button>
+            ))}
+          </div>
+
           <button
             onClick={toggleDark}
             aria-label={isDark ? 'Açık moda geç' : 'Koyu moda geç'}

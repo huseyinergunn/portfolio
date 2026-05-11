@@ -1,47 +1,15 @@
-const skillGroups = [
-  {
-    label: 'Diller',
-    color: '#a78bfa',
-    bg: 'rgba(167,139,250,0.12)',
-    border: 'rgba(167,139,250,0.25)',
-    items: ['JavaScript (ES6+)', 'TypeScript'],
-  },
-  {
-    label: 'Frontend',
-    color: '#60a5fa',
-    bg: 'rgba(96,165,250,0.12)',
-    border: 'rgba(96,165,250,0.25)',
-    items: ['React.js', 'Next.js', 'Redux Toolkit', 'Tailwind CSS', 'HTML5', 'CSS3'],
-  },
-  {
-    label: 'Backend',
-    color: '#34d399',
-    bg: 'rgba(52,211,153,0.12)',
-    border: 'rgba(52,211,153,0.25)',
-    items: ['Node.js', 'Express.js', 'NestJS', 'Prisma ORM', 'ASP.NET MVC', 'Entity Framework', 'RESTful APIs'],
-  },
-  {
-    label: 'Veritabanı',
-    color: '#fb923c',
-    bg: 'rgba(251,146,60,0.12)',
-    border: 'rgba(251,146,60,0.25)',
-    items: ['MongoDB', 'PostgreSQL', 'MS SQL Server'],
-  },
-  {
-    label: 'Araçlar & Teknolojiler',
-    color: '#9b8ec4',
-    bg: 'rgba(155,142,196,0.12)',
-    border: 'rgba(155,142,196,0.25)',
-    items: ['Git & GitHub', 'Postman', 'Vercel / Render', 'Cloudinary', 'JWT', 'n8n (Automation)', 'AI / LLM Integration'],
-  },
-  {
-    label: 'Diğer',
-    color: '#94a3b8',
-    bg: 'rgba(148,163,184,0.12)',
-    border: 'rgba(148,163,184,0.25)',
-    items: ['C#', 'C', 'İngilizce B2'],
-  },
+import { useLanguage } from '../context/LanguageContext'
+
+const SKILL_STYLES = [
+  { color: '#a78bfa', bg: 'rgba(167,139,250,0.12)', border: 'rgba(167,139,250,0.25)' },
+  { color: '#60a5fa', bg: 'rgba(96,165,250,0.12)',  border: 'rgba(96,165,250,0.25)' },
+  { color: '#34d399', bg: 'rgba(52,211,153,0.12)',  border: 'rgba(52,211,153,0.25)' },
+  { color: '#fb923c', bg: 'rgba(251,146,60,0.12)',  border: 'rgba(251,146,60,0.25)' },
+  { color: '#9b8ec4', bg: 'rgba(155,142,196,0.12)', border: 'rgba(155,142,196,0.25)' },
+  { color: '#94a3b8', bg: 'rgba(148,163,184,0.12)', border: 'rgba(148,163,184,0.25)' },
 ]
+
+const SKILL_ORDER = ['languages', 'frontend', 'backend', 'databases', 'tools', 'other']
 
 const Card = ({ children, style = {} }) => (
   <div style={{
@@ -58,6 +26,14 @@ const Card = ({ children, style = {} }) => (
 )
 
 export default function About() {
+  const { t } = useLanguage()
+  const a = t.about
+
+  const skillGroups = SKILL_ORDER.map((key, i) => ({
+    ...SKILL_STYLES[i],
+    ...a.skills[key],
+  }))
+
   return (
     <section
       id="about"
@@ -70,7 +46,7 @@ export default function About() {
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '28px' }}>
           <div style={{ width: '32px', height: '2px', background: 'linear-gradient(90deg, #9b8ec4, transparent)' }} />
           <span style={{ fontSize: '0.8rem', fontWeight: 600, color: '#9b8ec4', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
-            Hakkımda
+            {a.section_label}
           </span>
         </div>
 
@@ -80,7 +56,7 @@ export default function About() {
           gap: '16px', alignItems: 'start',
         }}>
 
-          {/* Ben Kimim? + Staj */}
+          {/* Who Am I? + Internship */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             <Card style={{ padding: '32px' }}>
               <div style={{
@@ -98,24 +74,18 @@ export default function About() {
                 fontSize: '1.5rem', fontWeight: 700, color: 'var(--c-primary)',
                 letterSpacing: '-0.02em', margin: '0 0 14px',
               }}>
-                Ben Kimim?
+                {a.title}
               </h2>
               <p style={{ color: 'var(--c-secondary)', lineHeight: 1.8, fontSize: '0.92rem', margin: '0 0 14px' }}>
-                Dokuz Eylül Üniversitesi Bilgisayar Bilimleri mezunuyum. MERN Stack ve .NET
-                ekosistemi (ASP.NET MVC, Entity Framework) ile{' '}
-                <strong style={{ color: '#9b8ec4' }}>ölçeklenebilir</strong>,{' '}
-                <strong style={{ color: '#9b8ec4' }}>kullanıcı odaklı</strong>{' '}
-                full-stack uygulamalar geliştiriyorum.
+                {a.description1}
               </p>
               <p style={{ color: 'var(--c-secondary)', lineHeight: 1.8, fontSize: '0.92rem', margin: 0 }}>
-                AI destekli çözümleri yazılım iş akışlarına entegre etmeye ilgi duyuyor;
-                veritabanı tasarımından modern UI implementasyonuna kadar uçtan uca proje
-                yönetimi konusunda deneyim kazanıyorum.
+                {a.description2}
               </p>
 
               {/* Qualitative badges */}
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '20px' }}>
-                {['Sürekli Öğrenen', 'Çözüm Odaklı', 'Takım Oyuncusu'].map((b) => (
+                {a.tags.map((b) => (
                   <span key={b} style={{
                     fontSize: '0.75rem', fontWeight: 500,
                     padding: '4px 12px', borderRadius: '100px',
@@ -140,10 +110,10 @@ export default function About() {
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '8px', flexWrap: 'wrap' }}>
                     <div>
                       <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--c-primary)', margin: '0 0 2px' }}>
-                        Back-End Developer Intern
+                        {a.internship.title}
                       </h3>
                       <p style={{ fontSize: '0.85rem', fontWeight: 600, color: '#60a5fa', margin: 0 }}>
-                        SoftNET Yönetim Bilgi Sistemleri
+                        {a.internship.company}
                       </p>
                     </div>
                     <span style={{
@@ -154,11 +124,11 @@ export default function About() {
                       border: '1px solid rgba(96,165,250,0.25)',
                       whiteSpace: 'nowrap',
                     }}>
-                      Tem – Ağu 2024
+                      {a.internship.date}
                     </span>
                   </div>
                   <p style={{ fontSize: '0.82rem', color: 'var(--c-secondary)', lineHeight: 1.7, margin: '10px 0 0' }}>
-                    ASP.NET MVC ve Entity Framework kullanarak ürünler, siparişler ve kullanıcılar gibi temel iş birimleri için CRUD modülleri geliştirdim. MS SQL Server'da ilişkisel şemalar tasarladım, stored procedure yazdım ve kıdemli geliştiricilerle code review süreçlerine katılarak Git tabanlı versiyon kontrolüne pratik deneyim kazandım.
+                    {a.internship.description}
                   </p>
                 </div>
               </div>
@@ -168,7 +138,7 @@ export default function About() {
           {/* Skills — categorized */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
             <h3 style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--c-primary)', margin: '0 0 4px', letterSpacing: '-0.01em' }}>
-              Teknik Yetkinlikler
+              {a.skills_title}
             </h3>
             {skillGroups.map((group) => (
               <Card key={group.label} style={{ padding: '11px 16px' }}>

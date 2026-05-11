@@ -1,3 +1,5 @@
+import { useLanguage } from '../context/LanguageContext'
+
 const ChevronDown = () => (
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
     stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -6,6 +8,9 @@ const ChevronDown = () => (
 )
 
 export default function Hero() {
+  const { t } = useLanguage()
+  const h = t.homepage
+
   return (
     <section
       id="hero"
@@ -46,7 +51,7 @@ export default function Hero() {
             background: '#7ec88a', display: 'inline-block',
             boxShadow: '0 0 0 3px rgba(126,200,138,0.25)',
           }} />
-          Yeni projelere açığım
+          {h.badge}
         </div>
 
         {/* Name */}
@@ -69,7 +74,7 @@ export default function Hero() {
           margin: '0 0 20px',
           letterSpacing: '0.01em',
         }}>
-          Dokuz Eylül Üniversitesi &nbsp;·&nbsp; Bilgisayar Bilimleri Mezunu
+          {h.subtitle}
         </p>
 
         {/* Role tags */}
@@ -77,19 +82,15 @@ export default function Hero() {
           display: 'flex', flexWrap: 'wrap', gap: '10px',
           justifyContent: 'center', marginBottom: '40px',
         }}>
-          {[
-            { label: 'Full Stack Developer', gradient: 'linear-gradient(135deg, #c4b5f4, #a78bfa)' },
-          ].map(({ label, gradient }) => (
-            <span key={label} style={{
-              padding: '8px 20px', borderRadius: '100px',
-              fontWeight: 500, fontSize: '0.88rem',
-              background: gradient,
-              color: '#1e1e2e',
-              boxShadow: '0 2px 12px rgba(0,0,0,0.10)',
-            }}>
-              {label}
-            </span>
-          ))}
+          <span style={{
+            padding: '8px 20px', borderRadius: '100px',
+            fontWeight: 500, fontSize: '0.88rem',
+            background: 'linear-gradient(135deg, #c4b5f4, #a78bfa)',
+            color: '#1e1e2e',
+            boxShadow: '0 2px 12px rgba(0,0,0,0.10)',
+          }}>
+            {h.role}
+          </span>
         </div>
 
         {/* Subtitle */}
@@ -99,7 +100,7 @@ export default function Hero() {
           lineHeight: 1.75,
           marginBottom: '48px',
         }}>
-          MERN Stack, TypeScript ve NestJS ile SaaS uygulamaları geliştiriyor, Groq ve n8n gibi araçlarla AI ve otomasyon entegre ediyorum.
+          {h.description}
         </p>
 
         {/* CTA Buttons */}
@@ -125,7 +126,7 @@ export default function Hero() {
               e.currentTarget.style.boxShadow = '0 4px 20px rgba(124,110,176,0.35)'
             }}
           >
-            Projelerimi Gör
+            {h.cta_projects}
           </a>
           <a
             href="#contact"
@@ -148,7 +149,7 @@ export default function Hero() {
               e.currentTarget.style.transform = 'translateY(0)'
             }}
           >
-            İletişime Geç
+            {h.cta_contact}
           </a>
         </div>
 
@@ -166,7 +167,7 @@ export default function Hero() {
           onMouseEnter={(e) => (e.currentTarget.style.color = '#9b8ec4')}
           onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--c-muted2)')}
         >
-          <span>Aşağı kaydır</span>
+          <span>{h.scroll}</span>
           <ChevronDown />
         </a>
       </div>

@@ -1,28 +1,19 @@
 import { useState, useEffect } from 'react'
 import { Briefcase, Calendar, MapPin, Building2, Download, CheckCircle2, ChevronRight } from 'lucide-react'
+import { useLanguage } from '../context/LanguageContext'
 
-const experiences = [
-  {
-    id: 'softnet',
-    role: 'Back-End Developer Intern',
-    company: 'SoftNET Yönetim Bilgi Sistemleri',
-    location: 'Türkiye',
-    period: 'Temmuz 2024 – Ağustos 2024',
-    type: 'Staj',
-    gradient: 'linear-gradient(135deg, #93c5fd 0%, #60a5fa 50%, #3b82f6 100%)',
-    accentColor: '#60a5fa',
-    accentBg: 'rgba(96,165,250,0.10)',
-    accentBorder: 'rgba(96,165,250,0.25)',
-    tasks: [
-      'ASP.NET MVC ve Entity Framework kullanarak ürünler, siparişler ve kullanıcılar gibi temel iş birimleri için CRUD modülleri geliştirdim; manuel veri girişi süresini azalttım.',
-      'MS SQL Server\'da ilişkisel şemalar tasarladım, stored procedure yazdım ve yavaş sorguları tespit ederek veri erişim performansını iyileştirdim.',
-      'Kıdemli geliştiricilerle code review süreçlerine ve stand-up toplantılarına katılarak kurumsal MVC mimarisine ve Git tabanlı versiyon kontrolüne pratik deneyim kazandım.',
-    ],
-    tags: ['C#', 'ASP.NET MVC', 'Entity Framework', 'MS SQL Server', 'RESTful APIs', 'Postman'],
-  },
-]
+const EXP_STYLE = {
+  gradient: 'linear-gradient(135deg, #93c5fd 0%, #60a5fa 50%, #3b82f6 100%)',
+  accentColor: '#60a5fa',
+  accentBg: 'rgba(96,165,250,0.10)',
+  accentBorder: 'rgba(96,165,250,0.25)',
+}
 
 export default function Experience() {
+  const { t } = useLanguage()
+  const e = t.experience
+  const exp = e.internship
+
   const [isMobile, setIsMobile] = useState(() =>
     typeof window !== 'undefined' ? window.innerWidth < 768 : false
   )
@@ -47,7 +38,7 @@ export default function Experience() {
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
           <div style={{ width: '32px', height: '2px', background: 'linear-gradient(90deg, #60a5fa, transparent)' }} />
           <span style={{ fontSize: '0.8rem', fontWeight: 600, color: '#60a5fa', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
-            Deneyim
+            {e.section_label}
           </span>
         </div>
 
@@ -64,14 +55,14 @@ export default function Experience() {
             fontWeight: 700, color: 'var(--c-primary)',
             letterSpacing: '-0.02em', margin: 0,
           }}>
-            İş Deneyimleri
+            {e.title}
           </h2>
 
           {/* CV Download Button */}
           <a
             href="/huseyin_ergun_cv.pdf"
-            onClick={(e) => {
-              e.preventDefault()
+            onClick={(ev) => {
+              ev.preventDefault()
               fetch('/huseyin_ergun_cv.pdf')
                 .then((res) => res.blob())
                 .then((blob) => {
@@ -96,24 +87,23 @@ export default function Experience() {
               width: isMobile ? '100%' : 'auto',
               justifyContent: isMobile ? 'center' : 'flex-start',
             }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'translateY(-2px)'
-              e.currentTarget.style.boxShadow = '0 8px 28px rgba(155,142,196,0.50)'
+            onMouseEnter={(ev) => {
+              ev.currentTarget.style.transform = 'translateY(-2px)'
+              ev.currentTarget.style.boxShadow = '0 8px 28px rgba(155,142,196,0.50)'
             }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'translateY(0)'
-              e.currentTarget.style.boxShadow = '0 4px 20px rgba(155,142,196,0.35)'
+            onMouseLeave={(ev) => {
+              ev.currentTarget.style.transform = 'translateY(0)'
+              ev.currentTarget.style.boxShadow = '0 4px 20px rgba(155,142,196,0.35)'
             }}
           >
             <Download size={16} strokeWidth={2.5} />
-            CV İndir
+            {e.cv_button}
           </a>
         </div>
 
         {/* Timeline */}
         <div style={{ position: 'relative' }}>
 
-          {/* Vertical line — masaüstünde göster */}
           {!isMobile && (
             <div style={{
               position: 'absolute', left: '24px', top: '52px', bottom: '0',
@@ -123,155 +113,143 @@ export default function Experience() {
           )}
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-            {experiences.map((exp) => (
-              <div
-                key={exp.id}
-                style={{
-                  display: 'flex',
-                  gap: isMobile ? '0' : '40px',
-                  alignItems: 'flex-start',
+            <div style={{ display: 'flex', gap: isMobile ? '0' : '40px', alignItems: 'flex-start' }}>
+
+              {!isMobile && (
+                <div style={{ flexShrink: 0, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <div style={{
+                    width: '50px', height: '50px', borderRadius: '16px',
+                    background: EXP_STYLE.gradient,
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    boxShadow: '0 4px 16px rgba(96,165,250,0.30)',
+                    color: '#fff', flexShrink: 0,
+                  }}>
+                    <Briefcase size={22} strokeWidth={2} />
+                  </div>
+                </div>
+              )}
+
+              {/* Card */}
+              <div style={{
+                flex: 1,
+                background: 'var(--c-card)',
+                backdropFilter: 'blur(14px)',
+                borderRadius: '24px',
+                border: '1px solid var(--c-card-border)',
+                boxShadow: '0 4px 32px var(--c-card-shadow)',
+                overflow: 'hidden',
+                transition: 'transform 0.25s, box-shadow 0.25s, background 0.4s, border-color 0.4s',
+                minWidth: 0,
+                breakInside: 'avoid',
+                pageBreakInside: 'avoid',
+              }}
+                onMouseEnter={(ev) => {
+                  ev.currentTarget.style.transform = 'translateY(-4px)'
+                  ev.currentTarget.style.boxShadow = '0 16px 48px rgba(96,165,250,0.14)'
+                }}
+                onMouseLeave={(ev) => {
+                  ev.currentTarget.style.transform = 'translateY(0)'
+                  ev.currentTarget.style.boxShadow = '0 4px 32px var(--c-card-shadow)'
                 }}
               >
-                {/* Timeline dot — masaüstünde göster */}
-                {!isMobile && (
-                  <div style={{ flexShrink: 0, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <div style={{
-                      width: '50px', height: '50px', borderRadius: '16px',
-                      background: exp.gradient,
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      boxShadow: '0 4px 16px rgba(96,165,250,0.30)',
-                      color: '#fff', flexShrink: 0,
-                    }}>
-                      <Briefcase size={22} strokeWidth={2} />
-                    </div>
-                  </div>
-                )}
+                <div style={{ height: '4px', background: EXP_STYLE.gradient }} />
 
-                {/* Card */}
-                <div style={{
-                  flex: 1,
-                  background: 'var(--c-card)',
-                  backdropFilter: 'blur(14px)',
-                  borderRadius: '24px',
-                  border: '1px solid var(--c-card-border)',
-                  boxShadow: '0 4px 32px var(--c-card-shadow)',
-                  overflow: 'hidden',
-                  transition: 'transform 0.25s, box-shadow 0.25s, background 0.4s, border-color 0.4s',
-                  minWidth: 0,
-                  breakInside: 'avoid',
-                  pageBreakInside: 'avoid',
-                }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-4px)'
-                    e.currentTarget.style.boxShadow = '0 16px 48px rgba(96,165,250,0.14)'
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'translateY(0)'
-                    e.currentTarget.style.boxShadow = '0 4px 32px var(--c-card-shadow)'
-                  }}
-                >
-                  {/* Card top accent bar */}
-                  <div style={{ height: '4px', background: exp.gradient }} />
-
-                  <div style={{ padding: cardPad }}>
-
-                    {/* Header */}
-                    <div style={{
-                      display: 'flex',
-                      flexDirection: isMobile ? 'column' : 'row',
-                      alignItems: 'flex-start',
-                      justifyContent: 'space-between',
-                      gap: '12px',
-                      marginBottom: '20px',
-                    }}>
-                      <div style={{ minWidth: 0 }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px', flexWrap: 'wrap' }}>
-                          <h3 style={{
-                            fontSize: isMobile ? '1rem' : '1.2rem',
-                            fontWeight: 700, color: 'var(--c-primary)', margin: 0, letterSpacing: '-0.02em',
-                          }}>
-                            {exp.role}
-                          </h3>
-                          <span style={{
-                            fontSize: '0.7rem', fontWeight: 600, padding: '3px 10px', borderRadius: '100px',
-                            background: exp.accentBg, color: exp.accentColor, border: `1px solid ${exp.accentBorder}`,
-                            letterSpacing: '0.06em', textTransform: 'uppercase', whiteSpace: 'nowrap',
-                          }}>
-                            {exp.type}
-                          </span>
-                        </div>
-
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
-                          <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.85rem', fontWeight: 600, color: exp.accentColor }}>
-                            <Building2 size={13} strokeWidth={2} />
-                            {exp.company}
-                          </span>
-                          <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.8rem', color: 'var(--c-muted)' }}>
-                            <MapPin size={12} strokeWidth={2} />
-                            {exp.location}
-                          </span>
-                        </div>
+                <div style={{ padding: cardPad }}>
+                  {/* Header */}
+                  <div style={{
+                    display: 'flex',
+                    flexDirection: isMobile ? 'column' : 'row',
+                    alignItems: 'flex-start',
+                    justifyContent: 'space-between',
+                    gap: '12px',
+                    marginBottom: '20px',
+                  }}>
+                    <div style={{ minWidth: 0 }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px', flexWrap: 'wrap' }}>
+                        <h3 style={{
+                          fontSize: isMobile ? '1rem' : '1.2rem',
+                          fontWeight: 700, color: 'var(--c-primary)', margin: 0, letterSpacing: '-0.02em',
+                        }}>
+                          {exp.title}
+                        </h3>
+                        <span style={{
+                          fontSize: '0.7rem', fontWeight: 600, padding: '3px 10px', borderRadius: '100px',
+                          background: EXP_STYLE.accentBg, color: EXP_STYLE.accentColor, border: `1px solid ${EXP_STYLE.accentBorder}`,
+                          letterSpacing: '0.06em', textTransform: 'uppercase', whiteSpace: 'nowrap',
+                        }}>
+                          {exp.badge}
+                        </span>
                       </div>
 
-                      <span style={{
-                        display: 'inline-flex', alignItems: 'center', gap: '6px',
-                        fontSize: '0.78rem', fontWeight: 500, color: 'var(--c-muted)',
-                        background: 'var(--c-tag)', border: '1px solid var(--c-card-border)',
-                        padding: '5px 12px', borderRadius: '100px', whiteSpace: 'nowrap',
-                        flexShrink: 0,
-                      }}>
-                        <Calendar size={12} strokeWidth={2} />
-                        {exp.period}
-                      </span>
-                    </div>
-
-                    {/* Separator */}
-                    <div style={{ height: '1px', background: 'var(--c-card-border)', marginBottom: '20px' }} />
-
-                    {/* Task bullets */}
-                    <ul style={{ margin: '0 0 24px', padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                      {exp.tasks.map((task, i) => (
-                        <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
-                          <CheckCircle2
-                            size={15}
-                            strokeWidth={2}
-                            style={{ color: exp.accentColor, flexShrink: 0, marginTop: '3px' }}
-                          />
-                          <span style={{ fontSize: isMobile ? '0.82rem' : '0.875rem', color: 'var(--c-secondary)', lineHeight: 1.75 }}>
-                            {task}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    {/* Tech tags */}
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                      {exp.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          style={{
-                            fontSize: '0.73rem', fontWeight: 500,
-                            padding: '4px 10px', borderRadius: '100px',
-                            background: exp.accentBg, color: 'var(--c-primary)',
-                            border: `1px solid ${exp.accentBorder}`,
-                            transition: 'transform 0.15s',
-                            cursor: 'default',
-                          }}
-                          onMouseEnter={(e) => (e.currentTarget.style.transform = 'translateY(-1px)')}
-                          onMouseLeave={(e) => (e.currentTarget.style.transform = 'translateY(0)')}
-                        >
-                          {tag}
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+                        <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.85rem', fontWeight: 600, color: EXP_STYLE.accentColor }}>
+                          <Building2 size={13} strokeWidth={2} />
+                          {exp.company}
                         </span>
-                      ))}
+                        <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.8rem', color: 'var(--c-muted)' }}>
+                          <MapPin size={12} strokeWidth={2} />
+                          {exp.location}
+                        </span>
+                      </div>
                     </div>
+
+                    <span style={{
+                      display: 'inline-flex', alignItems: 'center', gap: '6px',
+                      fontSize: '0.78rem', fontWeight: 500, color: 'var(--c-muted)',
+                      background: 'var(--c-tag)', border: '1px solid var(--c-card-border)',
+                      padding: '5px 12px', borderRadius: '100px', whiteSpace: 'nowrap',
+                      flexShrink: 0,
+                    }}>
+                      <Calendar size={12} strokeWidth={2} />
+                      {exp.date}
+                    </span>
+                  </div>
+
+                  <div style={{ height: '1px', background: 'var(--c-card-border)', marginBottom: '20px' }} />
+
+                  {/* Bullets */}
+                  <ul style={{ margin: '0 0 24px', padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                    {exp.bullets.map((bullet, i) => (
+                      <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
+                        <CheckCircle2
+                          size={15}
+                          strokeWidth={2}
+                          style={{ color: EXP_STYLE.accentColor, flexShrink: 0, marginTop: '3px' }}
+                        />
+                        <span style={{ fontSize: isMobile ? '0.82rem' : '0.875rem', color: 'var(--c-secondary)', lineHeight: 1.75 }}>
+                          {bullet}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Tech tags */}
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                    {exp.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        style={{
+                          fontSize: '0.73rem', fontWeight: 500,
+                          padding: '4px 10px', borderRadius: '100px',
+                          background: EXP_STYLE.accentBg, color: 'var(--c-primary)',
+                          border: `1px solid ${EXP_STYLE.accentBorder}`,
+                          transition: 'transform 0.15s',
+                          cursor: 'default',
+                        }}
+                        onMouseEnter={(ev) => (ev.currentTarget.style.transform = 'translateY(-1px)')}
+                        onMouseLeave={(ev) => (ev.currentTarget.style.transform = 'translateY(0)')}
+                      >
+                        {tag}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
 
-        {/* Callout */}
+        {/* Banner */}
         <div style={{
           marginTop: '48px',
           padding: isMobile ? '20px' : '24px 32px',
@@ -290,7 +268,7 @@ export default function Experience() {
             flexShrink: 0,
           }} />
           <p style={{ margin: 0, fontSize: '0.88rem', color: 'var(--c-secondary)', lineHeight: 1.7 }}>
-            Full-stack projeler geliştirirken bir ekiple birlikte çalışmak ve katkı sağlamak istiyorum.
+            {e.banner}
           </p>
           <a
             href="#contact"
@@ -306,16 +284,16 @@ export default function Experience() {
               transition: 'border-color 0.2s, color 0.2s',
               whiteSpace: 'nowrap',
             }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = '#9b8ec4'
-              e.currentTarget.style.color = 'var(--c-primary)'
+            onMouseEnter={(ev) => {
+              ev.currentTarget.style.borderColor = '#9b8ec4'
+              ev.currentTarget.style.color = 'var(--c-primary)'
             }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = 'rgba(155,142,196,0.40)'
-              e.currentTarget.style.color = '#9b8ec4'
+            onMouseLeave={(ev) => {
+              ev.currentTarget.style.borderColor = 'rgba(155,142,196,0.40)'
+              ev.currentTarget.style.color = '#9b8ec4'
             }}
           >
-            İletişime Geç <ChevronRight size={14} strokeWidth={2.5} />
+            {t.homepage.cta_contact} <ChevronRight size={14} strokeWidth={2.5} />
           </a>
         </div>
 

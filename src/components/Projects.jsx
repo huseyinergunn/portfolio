@@ -1,3 +1,5 @@
+import { useLanguage } from '../context/LanguageContext'
+
 const ExternalIcon = () => (
   <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
     stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -13,58 +15,41 @@ const GitHubIcon = () => (
   </svg>
 )
 
-const projects = [
+const STATIC_PROJECTS = [
   {
     id: 'fintrack',
-    name: 'Fintrack',
-    tagline: 'AI Destekli Finansal Yönetim & Faturalama Platformu',
-    description:
-      'İşletmelerin fatura oluşturmasını, gider takibini ve nakit akışını gerçek zamanlı analitik ' +
-      'dashboard ile yönetmesini sağlayan full-stack SaaS muhasebe platformu.',
-    tags: ['Next.js 14', 'NestJS', 'PostgreSQL', 'Prisma', 'React Query', 'Tailwind CSS', 'Groq AI', 'Cloudinary'],
     gradient: 'linear-gradient(135deg, #6ee7b7 0%, #34d399 50%, #10b981 100%)',
     accentLight: 'rgba(52,211,153,0.12)',
     accentBorder: 'rgba(52,211,153,0.3)',
     image: '/projects/fintrack.png',
-    features: ['Groq / LLaMA 3.3', 'HTTP-Only Cookie Auth', 'TypeScript'],
     github: 'https://github.com/huseyinergunn/fintrack-app',
     demo: 'https://fintrack-app-six-sand.vercel.app',
   },
   {
     id: 'reserveai',
-    name: 'ReserveAI',
-    tagline: 'AI Destekli Randevu Otomasyonu',
-    description:
-      'Kullanıcıların doğal dille randevu oluşturabildiği, Groq (Llama 3.3) ile intent sınıflandırması ' +
-      'yapan ve n8n ile manuel müdahaleyi ~%80 azaltan akıllı randevu sistemi.',
-    tags: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'TypeScript', 'Groq (Llama 3.3)', 'n8n', 'Railway'],
     gradient: 'linear-gradient(135deg, #93c5fd 0%, #60a5fa 50%, #3b82f6 100%)',
     accentLight: 'rgba(96,165,250,0.12)',
     accentBorder: 'rgba(96,165,250,0.3)',
     image: '/projects/reserveai.png',
-    features: ['Groq / Llama 3.3', 'HTTP-Only Cookie Auth', 'TypeScript'],
     github: 'https://github.com/huseyinergunn/reserveai-app',
     demo: 'https://reserveai-cckb.onrender.com',
   },
   {
     id: 'nexpos',
-    name: 'NexPos',
-    tagline: 'Fullstack Satış Noktası & Stok Yönetim Sistemi',
-    description:
-      'Perakende operasyonlarını dijitalleştiren kapsamlı bir POS sistemi. Gerçek zamanlı stok takibi, ' +
-      'dinamik fatura oluşturma ve kategori bazlı ürün yönetimi içermektedir.',
-    tags: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Redux Toolkit', 'Tailwind CSS'],
     gradient: 'linear-gradient(135deg, #c4b5f4 0%, #a78bfa 50%, #8b5cf6 100%)',
     accentLight: 'rgba(167,139,250,0.12)',
     accentBorder: 'rgba(167,139,250,0.3)',
     image: '/projects/nexpos.png',
-    features: ['MERN Stack', 'Redux Toolkit'],
     github: 'https://github.com/huseyinergunn/pos-app',
     demo: 'https://nexpos-app.vercel.app',
   },
 ]
 
 export default function Projects() {
+  const { t } = useLanguage()
+  const p = t.projects
+  const projects = STATIC_PROJECTS.map((s, i) => ({ ...s, ...p.items[i] }))
+
   return (
     <section
       id="projects"
@@ -82,7 +67,7 @@ export default function Projects() {
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
           <div style={{ width: '32px', height: '2px', background: 'linear-gradient(90deg, #60a5fa, transparent)' }} />
           <span style={{ fontSize: '0.8rem', fontWeight: 600, color: '#60a5fa', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
-            Projeler
+            {p.section_label}
           </span>
         </div>
         <h2 className="r-projects-h2" style={{
@@ -90,13 +75,13 @@ export default function Projects() {
           fontWeight: 700, color: 'var(--c-primary)',
           letterSpacing: '-0.02em', margin: '0 0 28px',
         }}>
-          Öne Çıkan Çalışmalar
+          {p.title}
         </h2>
 
         <div className="r-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '16px' }}>
-          {projects.map((p) => (
+          {projects.map((proj) => (
             <div
-              key={p.id}
+              key={proj.id}
               className="print-block"
               style={{
                 background: 'var(--c-card)',
@@ -121,11 +106,11 @@ export default function Projects() {
                 height: '150px',
                 position: 'relative',
                 overflow: 'hidden',
-                background: p.gradient,
+                background: proj.gradient,
               }}>
                 <img
-                  src={p.image}
-                  alt={p.name}
+                  src={proj.image}
+                  alt={proj.name}
                   style={{
                     width: '100%',
                     height: '100%',
@@ -134,7 +119,6 @@ export default function Projects() {
                     display: 'block',
                   }}
                 />
-                {/* Gradient fade overlay at bottom */}
                 <div style={{
                   position: 'absolute', inset: 0,
                   background: 'linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.45) 100%)',
@@ -151,7 +135,7 @@ export default function Projects() {
                   color: '#fff',
                   letterSpacing: '0.06em',
                 }}>
-                  {p.id.toUpperCase()}
+                  {proj.id.toUpperCase()}
                 </div>
               </div>
 
@@ -161,33 +145,33 @@ export default function Projects() {
                   fontSize: '1.15rem', fontWeight: 700, color: 'var(--c-primary)',
                   margin: '0 0 3px', letterSpacing: '-0.02em',
                 }}>
-                  {p.name}
+                  {proj.name}
                 </h3>
                 <p style={{ fontSize: '0.8rem', color: '#9b8ec4', fontWeight: 500, margin: '0 0 10px' }}>
-                  {p.tagline}
+                  {proj.subtitle}
                 </p>
                 <p style={{ fontSize: '0.84rem', color: 'var(--c-secondary)', lineHeight: 1.65, margin: '0 0 14px' }}>
-                  {p.description}
+                  {proj.description}
                 </p>
 
-                {/* Feature pills */}
+                {/* Highlight pills */}
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '14px' }}>
-                  {p.features.map((f) => (
-                    <span key={f} style={{
+                  {proj.highlights.map((h) => (
+                    <span key={h} style={{
                       fontSize: '0.75rem', fontWeight: 500,
                       padding: '4px 12px', borderRadius: '100px',
-                      background: p.accentLight, color: 'var(--c-primary)',
-                      border: `1px solid ${p.accentBorder}`,
+                      background: proj.accentLight, color: 'var(--c-primary)',
+                      border: `1px solid ${proj.accentBorder}`,
                     }}>
-                      ✓ {f}
+                      ✓ {h}
                     </span>
                   ))}
                 </div>
 
                 {/* Tech tags */}
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px', marginBottom: '16px' }}>
-                  {p.tags.map((t) => (
-                    <span key={t} style={{
+                  {proj.tags.map((tag) => (
+                    <span key={tag} style={{
                       fontSize: '0.73rem',
                       padding: '3px 10px',
                       borderRadius: '100px',
@@ -195,7 +179,7 @@ export default function Projects() {
                       color: 'var(--c-tag-text)',
                       fontWeight: 500,
                     }}>
-                      {t}
+                      {tag}
                     </span>
                   ))}
                 </div>
@@ -203,7 +187,7 @@ export default function Projects() {
                 {/* Links */}
                 <div style={{ display: 'flex', gap: '10px' }}>
                   <a
-                    href={p.github}
+                    href={proj.github}
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{
@@ -216,11 +200,11 @@ export default function Projects() {
                     onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.85')}
                     onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
                   >
-                    <GitHubIcon /> GitHub
+                    <GitHubIcon /> {p.github_label}
                   </a>
-                  {p.demo && (
+                  {proj.demo && (
                     <a
-                      href={p.demo}
+                      href={proj.demo}
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{
@@ -235,7 +219,7 @@ export default function Projects() {
                       onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#9b8ec4')}
                       onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'var(--c-ghost-border)')}
                     >
-                      <ExternalIcon /> Demo
+                      <ExternalIcon /> {p.demo_label}
                     </a>
                   )}
                 </div>

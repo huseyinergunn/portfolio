@@ -1,4 +1,5 @@
 import { ArrowUpRight } from 'lucide-react'
+import { useLanguage } from '../context/LanguageContext'
 
 const LinkedinIcon = ({ size = 24 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
@@ -19,46 +20,47 @@ const MailIcon = ({ size = 24 }) => (
   </svg>
 )
 
-const contactCards = [
+const STATIC_CARDS = [
   {
     id: 'linkedin',
-    label: 'LinkedIn',
-    value: 'LinkedIn Profilim',
     href: 'https://linkedin.com/in/hüseyin-ergün-4b6498158/',
     Icon: LinkedinIcon,
     gradient: 'linear-gradient(135deg, #38bdf8 0%, #0ea5e9 50%, #0284c7 100%)',
     accentColor: '#38bdf8',
     accentBg: 'rgba(56,189,248,0.10)',
     accentBorder: 'rgba(56,189,248,0.25)',
-    description: 'Profesyonel ağ & kariyer',
   },
   {
     id: 'github',
-    label: 'GitHub',
-    value: 'GitHub Profilim',
     href: 'https://github.com/huseyinergunn',
     Icon: GithubIcon,
     gradient: 'linear-gradient(135deg, #c4b5f4 0%, #9b8ec4 50%, #7c6fb5 100%)',
     accentColor: '#9b8ec4',
     accentBg: 'rgba(155,142,196,0.10)',
     accentBorder: 'rgba(155,142,196,0.25)',
-    description: 'Açık kaynak projeler & kod',
   },
   {
     id: 'email',
-    label: 'E-posta',
-    value: 'E-Posta Gönder',
     href: 'mailto:huseyinergun234@gmail.com',
     Icon: MailIcon,
     gradient: 'linear-gradient(135deg, #6ee7b7 0%, #34d399 50%, #10b981 100%)',
     accentColor: '#34d399',
     accentBg: 'rgba(52,211,153,0.10)',
     accentBorder: 'rgba(52,211,153,0.25)',
-    description: 'Doğrudan iletişim',
   },
 ]
 
 export default function Contact() {
+  const { t } = useLanguage()
+  const c = t.contact
+
+  const cards = STATIC_CARDS.map((s) => ({
+    ...s,
+    label: c[s.id].label,
+    sublabel: c[s.id].sublabel,
+    button: c[s.id].button,
+  }))
+
   return (
     <section
       id="contact"
@@ -92,7 +94,7 @@ export default function Contact() {
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
           <div style={{ width: '32px', height: '2px', background: 'linear-gradient(90deg, #c4b5f4, transparent)' }} />
           <span style={{ fontSize: '0.8rem', fontWeight: 600, color: '#9b8ec4', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
-            İletişim
+            {c.section_label}
           </span>
         </div>
 
@@ -101,10 +103,10 @@ export default function Contact() {
           fontWeight: 700, color: 'var(--c-primary)',
           letterSpacing: '-0.02em', margin: '0 0 12px',
         }}>
-          Yeni Fırsatlara Açığım
+          {c.title}
         </h2>
         <p className="r-contact-bio" style={{ fontSize: '1rem', color: 'var(--c-secondary)', margin: '0 0 64px', maxWidth: '520px', lineHeight: 1.75 }}>
-          Full-stack projeler geliştirirken bir ekiple birlikte çalışmak ve katkı sağlamak istiyorum. Aşağıdan bana ulaşabilirsin.
+          {c.description}
         </p>
 
         {/* Contact cards */}
@@ -114,7 +116,7 @@ export default function Contact() {
           gap: '20px',
           marginBottom: '80px',
         }}>
-          {contactCards.map(({ id, label, value, href, Icon, gradient, accentColor, accentBg, accentBorder, description }) => (
+          {cards.map(({ id, label, sublabel, button, href, Icon, gradient, accentColor, accentBg, accentBorder }) => (
             <a
               key={id}
               href={href}
@@ -168,15 +170,15 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* Label + description */}
+                {/* Label + sublabel */}
                 <p style={{ fontSize: '0.72rem', fontWeight: 600, color: accentColor, letterSpacing: '0.1em', textTransform: 'uppercase', margin: '0 0 4px' }}>
                   {label}
                 </p>
                 <p style={{ fontSize: '0.78rem', color: 'var(--c-muted)', margin: '0 0 14px' }}>
-                  {description}
+                  {sublabel}
                 </p>
 
-                {/* Value */}
+                {/* Button */}
                 <div style={{
                   padding: '10px 14px', borderRadius: '12px',
                   background: accentBg,
@@ -184,7 +186,7 @@ export default function Contact() {
                   textAlign: 'center',
                 }}>
                   <span style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--c-primary)', whiteSpace: 'nowrap' }}>
-                    {value}
+                    {button}
                   </span>
                 </div>
               </div>
@@ -203,10 +205,10 @@ export default function Contact() {
           gap: '12px',
         }}>
           <span style={{ fontSize: '0.82rem', color: 'var(--c-muted2)' }}>
-            © 2026 Hüseyin Ergün · Tüm hakları saklıdır.
+            {c.footer}
           </span>
           <span style={{ fontSize: '0.82rem', color: 'var(--c-muted2)' }}>
-            React & Tailwind CSS ile yapılmıştır
+            {c.footer_built}
           </span>
         </div>
       </div>
