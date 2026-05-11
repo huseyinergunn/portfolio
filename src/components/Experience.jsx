@@ -142,6 +142,7 @@ export default function Experience() {
                 minWidth: 0,
                 breakInside: 'avoid',
                 pageBreakInside: 'avoid',
+                willChange: 'transform',
               }}
                 onMouseEnter={(ev) => {
                   ev.currentTarget.style.transform = 'translateY(-4px)'
