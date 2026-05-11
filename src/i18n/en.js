@@ -89,7 +89,7 @@ export const en = {
         name: 'NexPos',
         subtitle: 'Fullstack Point of Sale & Inventory Management System',
         description: 'A comprehensive POS system that digitalizes retail operations. Features real-time inventory tracking, dynamic invoice generation, category-based product management, and role-based authorization. Includes a dark mode responsive UI and optimized state management with Redux Toolkit.',
-        highlights: ['MERN Stack', 'Redux Toolkit', 'Dark Mode'],
+        highlights: ['MERN Stack', 'Redux Toolkit'],
         tags: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Redux Toolkit', 'Tailwind CSS', 'REST API'],
       },
     ],

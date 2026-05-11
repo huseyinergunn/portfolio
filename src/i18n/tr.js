@@ -89,7 +89,7 @@ export const tr = {
         name: 'NexPos',
         subtitle: 'Fullstack Satış Noktası & Stok Yönetim Sistemi',
         description: 'Perakende operasyonlarını dijitalleştiren kapsamlı bir POS sistemi. Gerçek zamanlı stok takibi, dinamik fatura oluşturma, kategori bazlı ürün yönetimi ve kullanıcı rolleriyle yetkilendirme içermektedir. Dark mode destekli responsive arayüz ve Redux Toolkit ile optimize edilmiş state yönetimi sunmaktadır.',
-        highlights: ['MERN Stack', 'Redux Toolkit', 'Dark Mode'],
+        highlights: ['MERN Stack', 'Redux Toolkit'],
         tags: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Redux Toolkit', 'Tailwind CSS', 'REST API'],
       },
     ],
