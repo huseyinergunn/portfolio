@@ -80,7 +80,7 @@ export const tr = {
         id: 'reserveai',
         name: 'ReserveAI',
         subtitle: 'AI Destekli Randevu Otomasyonu',
-        description: 'Kullanıcıların doğal dille randevu oluşturabildiği, Groq (Llama 3.3) ile intent sınıflandırması yapan ve n8n ile manuel müdahaleyi ~%80 azaltan akıllı randevu sistemi.',
+        description: 'Kullanıcıların doğal dilde randevu oluşturabildiği, Groq (Llama 3.3) destekli akıllı bir SaaS sistemi. n8n ve Railway üzerindeki asenkron iş akışlarıyla manuel müdahaleyi ~%80 azaltmaktadır. HTTP-Only Cookie ve SameSite config ile XSS/CSRF koruması sağlamaktadır.',
         highlights: ['Groq / Llama 3.3', 'HTTP-Only Cookie Auth', 'TypeScript'],
         tags: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'TypeScript', 'Groq (Llama 3.3)', 'n8n', 'Railway'],
       },

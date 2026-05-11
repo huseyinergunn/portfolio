@@ -15,6 +15,10 @@ const GitHubIcon = () => (
   </svg>
 )
 
+const Divider = () => (
+  <div style={{ height: '1px', background: 'var(--c-divider)', margin: '16px 0' }} />
+)
+
 const STATIC_PROJECTS = [
   {
     id: 'fintrack',
@@ -78,12 +82,14 @@ export default function Projects() {
           {p.title}
         </h2>
 
-        <div className="r-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '16px' }}>
+        <div className="r-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '16px', alignItems: 'stretch' }}>
           {projects.map((proj) => (
             <div
               key={proj.id}
               className="print-block"
               style={{
+                display: 'flex',
+                flexDirection: 'column',
                 background: 'var(--c-card)',
                 backdropFilter: 'blur(16px)',
                 borderRadius: '28px',
@@ -98,7 +104,7 @@ export default function Projects() {
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(0)'
-                e.currentTarget.style.boxShadow = '0 4px 40px var(--c-card-shadow)'
+                e.currentTarget.style.boxShadow = '0 4px 24px var(--c-card-shadow), 0 1px 4px rgba(0,0,0,0.04)'
               }}
             >
               {/* Screenshot preview */}
@@ -107,17 +113,12 @@ export default function Projects() {
                 position: 'relative',
                 overflow: 'hidden',
                 background: proj.gradient,
+                flexShrink: 0,
               }}>
                 <img
                   src={proj.image}
                   alt={proj.name}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    objectPosition: 'top',
-                    display: 'block',
-                  }}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }}
                 />
                 <div style={{
                   position: 'absolute', inset: 0,
@@ -126,73 +127,88 @@ export default function Projects() {
                 }} />
                 <div style={{
                   position: 'absolute', top: '12px', right: '12px',
-                  background: 'rgba(0,0,0,0.45)',
-                  backdropFilter: 'blur(8px)',
-                  borderRadius: '100px',
-                  padding: '4px 12px',
-                  fontSize: '0.72rem',
-                  fontWeight: 600,
-                  color: '#fff',
-                  letterSpacing: '0.06em',
+                  background: 'rgba(0,0,0,0.45)', backdropFilter: 'blur(8px)',
+                  borderRadius: '100px', padding: '4px 12px',
+                  fontSize: '0.72rem', fontWeight: 600, color: '#fff', letterSpacing: '0.06em',
                 }}>
                   {proj.id.toUpperCase()}
                 </div>
               </div>
 
-              {/* Content */}
-              <div style={{ padding: '20px 22px' }}>
-                <h3 style={{
-                  fontSize: '1.15rem', fontWeight: 700, color: 'var(--c-primary)',
-                  margin: '0 0 3px', letterSpacing: '-0.02em',
+              {/* Content — flex column, fills remaining height */}
+              <div style={{ display: 'flex', flexDirection: 'column', flex: 1, padding: '20px 22px 20px' }}>
+
+                {/* Top section: name, subtitle, description, highlights */}
+                <div style={{ flex: 1 }}>
+                  <h3 style={{
+                    fontSize: '1.15rem', fontWeight: 700, color: 'var(--c-primary)',
+                    margin: '0 0 3px', letterSpacing: '-0.02em',
+                  }}>
+                    {proj.name}
+                  </h3>
+                  <p style={{ fontSize: '0.8rem', color: '#9b8ec4', fontWeight: 500, margin: '0 0 10px' }}>
+                    {proj.subtitle}
+                  </p>
+                  <p style={{ fontSize: '0.84rem', color: 'var(--c-secondary)', lineHeight: 1.65, margin: '0 0 14px' }}>
+                    {proj.description}
+                  </p>
+
+                  {/* Highlight pills */}
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                    {proj.highlights.map((h) => (
+                      <span key={h} style={{
+                        fontSize: '0.75rem', fontWeight: 500,
+                        padding: '4px 12px', borderRadius: '100px',
+                        background: proj.accentLight, color: 'var(--c-primary)',
+                        border: `1px solid ${proj.accentBorder}`,
+                      }}>
+                        ✓ {h}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <Divider />
+
+                {/* Stack section */}
+                <div style={{
+                  background: 'var(--c-stack-bg)',
+                  borderRadius: '14px',
+                  padding: '12px 14px',
                 }}>
-                  {proj.name}
-                </h3>
-                <p style={{ fontSize: '0.8rem', color: '#9b8ec4', fontWeight: 500, margin: '0 0 10px' }}>
-                  {proj.subtitle}
-                </p>
-                <p style={{ fontSize: '0.84rem', color: 'var(--c-secondary)', lineHeight: 1.65, margin: '0 0 14px' }}>
-                  {proj.description}
-                </p>
-
-                {/* Highlight pills */}
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '14px' }}>
-                  {proj.highlights.map((h) => (
-                    <span key={h} style={{
-                      fontSize: '0.75rem', fontWeight: 500,
-                      padding: '4px 12px', borderRadius: '100px',
-                      background: proj.accentLight, color: 'var(--c-primary)',
-                      border: `1px solid ${proj.accentBorder}`,
-                    }}>
-                      ✓ {h}
-                    </span>
-                  ))}
+                  <span style={{
+                    display: 'block',
+                    fontSize: '0.68rem', fontWeight: 700,
+                    color: 'var(--c-muted)', letterSpacing: '0.12em',
+                    textTransform: 'uppercase', marginBottom: '8px',
+                  }}>
+                    STACK
+                  </span>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}>
+                    {proj.tags.map((tag) => (
+                      <span key={tag} style={{
+                        fontSize: '0.73rem', fontWeight: 500,
+                        padding: '3px 10px', borderRadius: '100px',
+                        background: 'var(--c-tag)', color: 'var(--c-tag-text)',
+                      }}>
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
 
-                {/* Tech tags */}
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px', marginBottom: '16px' }}>
-                  {proj.tags.map((tag) => (
-                    <span key={tag} style={{
-                      fontSize: '0.73rem',
-                      padding: '3px 10px',
-                      borderRadius: '100px',
-                      background: 'var(--c-tag)',
-                      color: 'var(--c-tag-text)',
-                      fontWeight: 500,
-                    }}>
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                <Divider />
 
-                {/* Links */}
+                {/* Bottom: buttons full width */}
                 <div style={{ display: 'flex', gap: '10px' }}>
                   <a
                     href={proj.github}
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{
-                      display: 'flex', alignItems: 'center', gap: '6px',
-                      padding: '8px 18px', borderRadius: '100px',
+                      flex: 1,
+                      display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px',
+                      padding: '9px 0', borderRadius: '100px',
                       background: 'var(--c-primary)', color: 'var(--c-card)',
                       textDecoration: 'none', fontSize: '0.82rem', fontWeight: 600,
                       transition: 'opacity 0.2s',
@@ -208,8 +224,9 @@ export default function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{
-                        display: 'flex', alignItems: 'center', gap: '6px',
-                        padding: '8px 18px', borderRadius: '100px',
+                        flex: 1,
+                        display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px',
+                        padding: '9px 0', borderRadius: '100px',
                         background: 'transparent',
                         border: '1.5px solid var(--c-ghost-border)',
                         color: 'var(--c-primary)',

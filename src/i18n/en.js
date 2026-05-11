@@ -80,7 +80,7 @@ export const en = {
         id: 'reserveai',
         name: 'ReserveAI',
         subtitle: 'AI-Powered Appointment Automation',
-        description: 'An intelligent appointment system where users can create bookings in natural language, powered by Groq (Llama 3.3) for intent classification and n8n to reduce manual intervention by ~80%.',
+        description: 'A smart SaaS appointment system powered by Groq (Llama 3.3) where users book in plain language. Asynchronous n8n workflows on Railway reduce manual scheduling by ~80%. Secured against XSS/CSRF with HTTP-Only cookies and SameSite configuration.',
         highlights: ['Groq / Llama 3.3', 'HTTP-Only Cookie Auth', 'TypeScript'],
         tags: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'TypeScript', 'Groq (Llama 3.3)', 'n8n', 'Railway'],
       },
