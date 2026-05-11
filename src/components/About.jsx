@@ -4,14 +4,14 @@ const skillGroups = [
     color: '#a78bfa',
     bg: 'rgba(167,139,250,0.12)',
     border: 'rgba(167,139,250,0.25)',
-    items: ['C#', 'JavaScript (ES6+)', 'TypeScript', 'C'],
+    items: ['JavaScript (ES6+)', 'TypeScript'],
   },
   {
     label: 'Frontend',
     color: '#60a5fa',
     bg: 'rgba(96,165,250,0.12)',
     border: 'rgba(96,165,250,0.25)',
-    items: ['React.js', 'Next.js', 'Redux Toolkit', 'Tailwind CSS', 'Bootstrap', 'HTML5', 'CSS3'],
+    items: ['React.js', 'Next.js', 'Redux Toolkit', 'Tailwind CSS', 'HTML5', 'CSS3'],
   },
   {
     label: 'Backend',
@@ -32,7 +32,14 @@ const skillGroups = [
     color: '#9b8ec4',
     bg: 'rgba(155,142,196,0.12)',
     border: 'rgba(155,142,196,0.25)',
-    items: ['Git & GitHub', 'Postman', 'JWT', 'n8n (Automation)', 'AI Integration (LLMs)', 'Cloudinary', 'Vercel / Render'],
+    items: ['Git & GitHub', 'Postman', 'Vercel / Render', 'Cloudinary', 'JWT', 'n8n (Automation)', 'AI / LLM Integration'],
+  },
+  {
+    label: 'Diğer',
+    color: '#94a3b8',
+    bg: 'rgba(148,163,184,0.12)',
+    border: 'rgba(148,163,184,0.25)',
+    items: ['C#', 'C', 'İngilizce B2'],
   },
 ]
 
@@ -147,10 +154,11 @@ export default function About() {
                       Tem – Ağu 2024
                     </span>
                   </div>
-                  <p style={{ fontSize: '0.82rem', color: 'var(--c-secondary)', lineHeight: 1.7, margin: '10px 0 0' }}>
-                    ASP.NET MVC ve Entity Framework kullanarak kurumsal yazılım modülleri geliştirdim.
-                    RESTful API tasarımı ve MS SQL Server ile veri yönetimi konularında deneyim kazandım.
-                  </p>
+                  <ul style={{ fontSize: '0.82rem', color: 'var(--c-secondary)', lineHeight: 1.7, margin: '10px 0 0', padding: '0 0 0 16px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                    <li>ASP.NET MVC ve Entity Framework kullanarak ürünler, siparişler ve kullanıcılar gibi temel iş birimleri için CRUD modülleri geliştirdim; manuel veri girişi süresini azalttım.</li>
+                    <li>MS SQL Server'da ilişkisel şemalar tasarladım, stored procedure yazdım ve yavaş sorguları tespit ederek veri erişim performansını iyileştirdim.</li>
+                    <li>Kıdemli geliştiricilerle code review süreçlerine katılarak kurumsal MVC mimarisine ve Git tabanlı versiyon kontrolüne pratik deneyim kazandım.</li>
+                  </ul>
                 </div>
               </div>
             </Card>
