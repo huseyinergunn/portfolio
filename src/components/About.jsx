@@ -9,7 +9,7 @@ const SKILL_STYLES = [
   { color: '#94a3b8', bg: 'rgba(148,163,184,0.12)', border: 'rgba(148,163,184,0.25)' },
 ]
 
-const SKILL_ORDER = ['languages', 'frontend', 'backend', 'databases', 'tools', 'other']
+const SKILL_ORDER = ['frontend', 'backend', 'databases', 'tools', 'other']
 
 const Card = ({ children, style = {} }) => (
   <div style={{

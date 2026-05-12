@@ -25,12 +25,11 @@ export const tr = {
     tags: ['Sürekli Öğrenen', 'Çözüm Odaklı', 'Takım Oyuncusu'],
     skills_title: 'Teknik Yetkinlikler',
     skills: {
-      languages:  { label: 'Diller',                 items: ['JavaScript (ES6+)', 'TypeScript'] },
-      frontend:   { label: 'Frontend',               items: ['React.js', 'Next.js', 'Redux Toolkit', 'Tailwind CSS', 'HTML5', 'CSS3'] },
-      backend:    { label: 'Backend',                items: ['Node.js', 'Express.js', 'NestJS', 'Prisma ORM', 'ASP.NET MVC', 'Entity Framework', 'RESTful APIs'] },
-      databases:  { label: 'Veritabanı',             items: ['MongoDB', 'PostgreSQL', 'MS SQL Server'] },
-      tools:      { label: 'Araçlar & Teknolojiler', items: ['Git & GitHub', 'Postman', 'Vercel / Render', 'Cloudinary', 'JWT', 'n8n (Automation)', 'AI / LLM Integration'] },
-      other:      { label: 'Diğer',                  items: ['C#', 'C', 'İngilizce B2'] },
+      frontend:   { label: 'FRONTEND',                items: ['JavaScript (ES6+)', 'TypeScript', 'React.js', 'Next.js', 'Redux Toolkit', 'Tailwind CSS', 'HTML5', 'CSS3'] },
+      backend:    { label: 'BACKEND',                 items: ['Node.js', 'Express.js', 'NestJS', 'Prisma ORM', 'ASP.NET MVC', 'Entity Framework', 'RESTful APIs'] },
+      databases:  { label: 'VERİTABANI',              items: ['PostgreSQL', 'MongoDB', 'MS SQL Server'] },
+      tools:      { label: 'ARAÇLAR & TEKNOLOJİLER', items: ['Git & GitHub', 'Postman', 'Vercel / Render', 'Cloudinary', 'JWT', 'n8n (Automation)', 'AI / LLM Integration'] },
+      other:      { label: 'DİĞER',                   items: ['C#', 'C', 'İngilizce B2'] },
     },
     internship: {
       title: 'Back-End Developer Intern',

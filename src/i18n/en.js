@@ -25,12 +25,11 @@ export const en = {
     tags: ['Continuous Learner', 'Problem Solver', 'Team Player'],
     skills_title: 'Technical Skills',
     skills: {
-      languages:  { label: 'LANGUAGES',            items: ['JavaScript (ES6+)', 'TypeScript'] },
-      frontend:   { label: 'FRONTEND',              items: ['React.js', 'Next.js', 'Redux Toolkit', 'Tailwind CSS', 'HTML5', 'CSS3'] },
-      backend:    { label: 'BACKEND',               items: ['Node.js', 'Express.js', 'NestJS', 'Prisma ORM', 'ASP.NET MVC', 'Entity Framework', 'RESTful APIs'] },
-      databases:  { label: 'DATABASES',             items: ['MongoDB', 'PostgreSQL', 'MS SQL Server'] },
-      tools:      { label: 'TOOLS & TECHNOLOGIES',  items: ['Git & GitHub', 'Postman', 'Vercel / Render', 'Cloudinary', 'JWT', 'n8n (Automation)', 'AI / LLM Integration'] },
-      other:      { label: 'OTHER',                 items: ['C#', 'C', 'English B2'] },
+      frontend:   { label: 'FRONTEND',             items: ['JavaScript (ES6+)', 'TypeScript', 'React.js', 'Next.js', 'Redux Toolkit', 'Tailwind CSS', 'HTML5', 'CSS3'] },
+      backend:    { label: 'BACKEND',              items: ['Node.js', 'Express.js', 'NestJS', 'Prisma ORM', 'ASP.NET MVC', 'Entity Framework', 'RESTful APIs'] },
+      databases:  { label: 'DATABASES',            items: ['PostgreSQL', 'MongoDB', 'MS SQL Server'] },
+      tools:      { label: 'TOOLS & TECHNOLOGIES', items: ['Git & GitHub', 'Postman', 'Vercel / Render', 'Cloudinary', 'JWT', 'n8n (Automation)', 'AI / LLM Integration'] },
+      other:      { label: 'OTHER',                items: ['C#', 'C', 'English B2'] },
     },
     internship: {
       title: 'Back-End Developer Intern',
